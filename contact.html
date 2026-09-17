@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUNA HAIR — Контакты</title>
+
+<style>
+:root{
+    --cream:#EAE2D5;
+    --light:#F8F5EF;
+    --brown:#241B17;
+    --brown-soft:#332722;
+    --gold:#BFA06A;
+    --gold-light:#D8C59A;
+    --text:#29211D;
+    --muted:#746960;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(36,27,23,.96);
+    border-bottom:1px solid var(--gold);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:var(--gold-light);
+    font-size:25px;
+    letter-spacing:4px;
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+nav a:hover{
+    color:var(--gold-light);
+}
+
+.languages{
+    display:flex;
+    gap:6px;
+    margin-left:10px;
+}
+
+.languages button{
+    background:transparent;
+    border:1px solid rgba(216,197,154,.45);
+    color:#fff;
+    padding:6px 8px;
+    cursor:pointer;
+    font-size:11px;
+}
+
+.languages button:hover,
+.languages button.active{
+    background:var(--gold);
+    color:var(--brown);
+    border-color:var(--gold);
+}
+
+.menu-toggle{
+    display:none;
+    color:var(--gold-light);
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    height:570px;
+    margin-top:70px;
+    background:
+        linear-gradient(rgba(36,27,23,.4),rgba(36,27,23,.65)),
+        url("./images/13.jpeg") center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:65px 25px;
+    color:#fff;
+}
+
+.hero-content span{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+.hero-content h1{
+    margin-top:14px;
+    font-size:56px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.hero-content p{
+    margin-top:18px;
+    max-width:600px;
+    line-height:1.7;
+    color:#eee;
+}
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 25px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.section-title h2{
+    margin-top:12px;
+    font-size:42px;
+    font-weight:400;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    background:var(--brown);
+    color:#fff;
+    padding:38px;
+    border:1px solid rgba(191,160,106,.35);
+}
+
+.contact-card h3{
+    color:var(--gold-light);
+    font-size:24px;
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    margin-bottom:22px;
+}
+
+.contact-item span{
+    display:block;
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.contact-item a,
+.contact-item p{
+    color:#eee;
+    text-decoration:none;
+    line-height:1.6;
+}
+
+.form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid rgba(191,160,106,.4);
+    background:#fff;
+    color:var(--text);
+    font-family:inherit;
+}
+
+.form textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.form button{
+    padding:15px;
+    border:1px solid var(--gold);
+    background:var(--gold);
+    color:var(--brown);
+    cursor:pointer;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.step{
+    background:var(--light);
+    padding:30px 22px;
+    border:1px solid rgba(191,160,106,.3);
+}
+
+.step-number{
+    color:var(--gold);
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.step h3{
+    margin:12px 0 10px;
+    font-weight:400;
+    font-size:21px;
+}
+
+.step p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:14px;
+}
+
+.photos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.photos img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid rgba(36,27,23,.2);
+}
+
+.faq-question{
+    padding:22px 0;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    font-size:17px;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 0 22px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+.location{
+    text-align:center;
+    background:var(--brown);
+    color:#fff;
+    padding:60px 25px;
+}
+
+.location h2{
+    color:var(--gold-light);
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.location p{
+    color:#ddd;
+}
+
+.cta{
+    background:#1b1411;
+    color:#fff;
+    text-align:center;
+    padding:80px 25px;
+}
+
+.cta h2{
+    color:var(--gold-light);
+    font-size:40px;
+    font-weight:400;
+    margin-bottom:18px;
+}
+
+.cta p{
+    color:#ddd;
+    margin-bottom:28px;
+}
+
+.cta a{
+    display:inline-block;
+    padding:14px 30px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    text-decoration:none;
+}
+
+footer{
+    background:#15100e;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+    font-size:12px;
+}
+
+@media(max-width:850px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:69px;
+        left:0;
+        width:100%;
+        background:var(--brown);
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    .languages{
+        margin-left:0;
+    }
+
+    .hero{
+        height:500px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .contact-grid,
+    .photos{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .navbar{
+        padding:16px 18px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .hero{
+        height:470px;
+    }
+
+    .hero-content{
+        padding:45px 20px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .section{
+        padding:65px 18px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .photos img{
+        height:330px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            LUNA HAIR
+        </a>
+
+        <div
+            class="menu-toggle"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </div>
+
+        <nav id="nav">
+
+            <a href="index.html" data-i18n="nav.home">
+                Главная
+            </a>
+
+            <a href="services.html" data-i18n="nav.services">
+                Услуги
+            </a>
+
+            <a href="prices.html" data-i18n="nav.prices">
+                Цены
+            </a>
+
+            <a href="works.html" data-i18n="nav.works">
+                Работы
+            </a>
+
+            <a href="reviews.html" data-i18n="nav.reviews">
+                Отзывы
+            </a>
+
+            <a href="contact.html" data-i18n="nav.contact">
+                Контакты
+            </a>
+
+
+            <!-- NL → EN → RU → UA -->
+
+            <div class="languages">
+
+                <button
+                    class="lang-btn"
+                    data-lang="nl"
+                    onclick="setLanguage('nl')"
+                >
+                    NL
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="en"
+                    onclick="setLanguage('en')"
+                >
+                    EN
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ru"
+                    onclick="setLanguage('ru')"
+                >
+                    RU
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ua"
+                    onclick="setLanguage('ua')"
+                >
+                    UA
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span data-i18n="hero.small">
+            LUNA HAIR
+        </span>
+
+        <h1 data-i18n="hero.title">
+            Контакты
+        </h1>
+
+        <p data-i18n="hero.text">
+            Свяжитесь с нами для записи и консультации.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span data-i18n="section.small">
+            CONTACT
+        </span>
+
+        <h2 data-i18n="section.title">
+            Свяжитесь с нами
+        </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3 data-i18n="info.title">
+                Контактная информация
+            </h3>
+
+
+            <div class="contact-item">
+
+                <span data-i18n="info.whatsapp.label">
+                    WHATSAPP
+                </span>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    +31 6 14664933
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span data-i18n="info.address.label">
+                    АДРЕС
+                </span>
+
+                <p data-i18n="info.address.text">
+                    Адрес будет добавлен
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span data-i18n="info.hours.label">
+                    ЧАСЫ РАБОТЫ
+                </span>
+
+                <p data-i18n="info.hours.text">
+                    По записи
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span data-i18n="info.languages.label">
+                    ЯЗЫКИ
+                </span>
+
+                <p data-i18n="info.languages.text">
+                    Nederlands · English · Русский · Українська
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3 data-i18n="form.title">
+                Запись
+            </h3>
+
+
+            <form
+                class="form"
+                onsubmit="sendWhatsApp(event)"
+            >
+
+                <input
+                    type="text"
+                    id="name"
+                    data-placeholder="form.name"
+                    placeholder="Ваше имя"
+                    required
+                >
+
+
+                <input
+                    type="text"
+                    id="service"
+                    data-placeholder="form.service"
+                    placeholder="Какая услуга вас интересует?"
+                >
+
+
+                <textarea
+                    id="message"
+                    data-placeholder="form.message"
+                    placeholder="Ваше сообщение"
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    data-i18n="form.button"
+                >
+                    Отправить в WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span data-i18n="process.small">
+            BOOKING
+        </span>
+
+        <h2 data-i18n="process.title">
+            Как проходит запись
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">01</div>
+
+            <h3 data-i18n="step1.title">
+                Сообщение
+            </h3>
+
+            <p data-i18n="step1.text">
+                Вы связываетесь с нами через WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">02</div>
+
+            <h3 data-i18n="step2.title">
+                Консультация
+            </h3>
+
+            <p data-i18n="step2.text">
+                Обсуждаем желаемую длину, объём и технику.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">03</div>
+
+            <h3 data-i18n="step3.title">
+                Выбор
+            </h3>
+
+            <p data-i18n="step3.text">
+                Подбираем подходящий вариант для ваших волос.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">04</div>
+
+            <h3 data-i18n="step4.title">
+                Запись
+            </h3>
+
+            <p data-i18n="step4.text">
+                Согласовываем удобное время визита.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="photos">
+
+        <img
+            src="./images/10.jpeg"
+            alt="Hair extensions"
+        >
+
+        <img
+            src="./images/11.jpeg"
+            alt="Long hair"
+        >
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span data-i18n="faq.small">
+            FAQ
+        </span>
+
+        <h2 data-i18n="faq.title">
+            Частые вопросы
+        </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)"
+            >
+                <span data-i18n="faq1.q">
+                    Сколько длится процедура?
+                </span>
+
+                <span>+</span>
+            </div>
+
+            <div
+                class="faq-answer"
+                data-i18n="faq1.a"
+            >
+                Время зависит от выбранной техники, количества и длины волос.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)"
+            >
+                <span data-i18n="faq2.q">
+                    Как выбрать подходящую технику?
+                </span>
+
+                <span>+</span>
+            </div>
+
+            <div
+                class="faq-answer"
+                data-i18n="faq2.a"
+            >
+                Подходящая техника определяется после консультации с учётом ваших волос и желаемого результата.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)"
+            >
+                <span data-i18n="faq3.q">
+                    Можно ли сначала получить консультацию?
+                </span>
+
+                <span>+</span>
+            </div>
+
+            <div
+                class="faq-answer"
+                data-i18n="faq3.a"
+            >
+                Да, вы можете связаться с нами через WhatsApp и обсудить детали.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)"
+            >
+                <span data-i18n="faq4.q">
+                    Как записаться?
+                </span>
+
+                <span>+</span>
+            </div>
+
+            <div
+                class="faq-answer"
+                data-i18n="faq4.a"
+            >
+                Напишите нам в WhatsApp, чтобы согласовать удобное время.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="location">
+
+    <h2 data-i18n="location.title">
+        Наше расположение
+    </h2>
+
+    <p data-i18n="location.text">
+        Адрес будет добавлен после подтверждения.
+    </p>
+
+</section>
+
+
+<section class="cta">
+
+    <h2 data-i18n="cta.title">
+        Готовы записаться?
+    </h2>
+
+    <p data-i18n="cta.text">
+        Напишите нам в WhatsApp.
+    </p>
+
+    <a
+        href="https://wa.me/31614664933"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="cta.button"
+    >
+        Написать в WhatsApp
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 LUNA HAIR
+</footer>
+
+
+<script>
+
+const translations={
+
+    ru:{
+
+        "nav.home":"Главная",
+        "nav.services":"Услуги",
+        "nav.prices":"Цены",
+        "nav.works":"Работы",
+        "nav.reviews":"Отзывы",
+        "nav.contact":"Контакты",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Контакты",
+        "hero.text":"Свяжитесь с нами для записи и консультации.",
+
+        "section.small":"CONTACT",
+        "section.title":"Свяжитесь с нами",
+
+        "info.title":"Контактная информация",
+        "info.whatsapp.label":"WHATSAPP",
+        "info.address.label":"АДРЕС",
+        "info.address.text":"Адрес будет добавлен",
+        "info.hours.label":"ЧАСЫ РАБОТЫ",
+        "info.hours.text":"По записи",
+        "info.languages.label":"ЯЗЫКИ",
+        "info.languages.text":"Nederlands · English · Русский · Українська",
+
+        "form.title":"Запись",
+        "form.name":"Ваше имя",
+        "form.service":"Какая услуга вас интересует?",
+        "form.message":"Ваше сообщение",
+        "form.button":"Отправить в WhatsApp",
+
+        "process.small":"BOOKING",
+        "process.title":"Как проходит запись",
+
+        "step1.title":"Сообщение",
+        "step1.text":"Вы связываетесь с нами через WhatsApp.",
+
+        "step2.title":"Консультация",
+        "step2.text":"Обсуждаем желаемую длину, объём и технику.",
+
+        "step3.title":"Выбор",
+        "step3.text":"Подбираем подходящий вариант для ваших волос.",
+
+        "step4.title":"Запись",
+        "step4.text":"Согласовываем удобное время визита.",
+
+        "faq.small":"FAQ",
+        "faq.title":"Частые вопросы",
+
+        "faq1.q":"Сколько длится процедура?",
+        "faq1.a":"Время зависит от выбранной техники, количества и длины волос.",
+
+        "faq2.q":"Как выбрать подходящую технику?",
+        "faq2.a":"Подходящая техника определяется после консультации с учётом ваших волос и желаемого результата.",
+
+        "faq3.q":"Можно ли сначала получить консультацию?",
+        "faq3.a":"Да, вы можете связаться с нами через WhatsApp и обсудить детали.",
+
+        "faq4.q":"Как записаться?",
+        "faq4.a":"Напишите нам в WhatsApp, чтобы согласовать удобное время.",
+
+        "location.title":"Наше расположение",
+        "location.text":"Адрес будет добавлен после подтверждения.",
+
+        "cta.title":"Готовы записаться?",
+        "cta.text":"Напишите нам в WhatsApp.",
+        "cta.button":"Написать в WhatsApp"
+    },
+
+
+    nl:{
+
+        "nav.home":"Home",
+        "nav.services":"Diensten",
+        "nav.prices":"Prijzen",
+        "nav.works":"Werk",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Contact",
+        "hero.text":"Neem contact met ons op voor een afspraak en consult.",
+
+        "section.small":"CONTACT",
+        "section.title":"Neem contact met ons op",
+
+        "info.title":"Contactgegevens",
+        "info.whatsapp.label":"WHATSAPP",
+        "info.address.label":"ADRES",
+        "info.address.text":"Adres wordt toegevoegd",
+        "info.hours.label":"OPENINGSTIJDEN",
+        "info.hours.text":"Op afspraak",
+        "info.languages.label":"TALEN",
+        "info.languages.text":"Nederlands · English · Русский · Українська",
+
+        "form.title":"Afspraak maken",
+        "form.name":"Uw naam",
+        "form.service":"Welke behandeling interesseert u?",
+        "form.message":"Uw bericht",
+        "form.button":"Versturen via WhatsApp",
+
+        "process.small":"BOOKING",
+        "process.title":"Hoe werkt het boeken?",
+
+        "step1.title":"Bericht",
+        "step1.text":"Neem contact met ons op via WhatsApp.",
+
+        "step2.title":"Consult",
+        "step2.text":"We bespreken de gewenste lengte, het volume en de techniek.",
+
+        "step3.title":"Keuze",
+        "step3.text":"We kiezen de passende optie voor uw haar.",
+
+        "step4.title":"Afspraak",
+        "step4.text":"We spreken een geschikt moment af.",
+
+        "faq.small":"FAQ",
+        "faq.title":"Veelgestelde vragen",
+
+        "faq1.q":"Hoe lang duurt de behandeling?",
+        "faq1.a":"De duur hangt af van de gekozen techniek, hoeveelheid en lengte van het haar.",
+
+        "faq2.q":"Hoe kies ik de juiste techniek?",
+        "faq2.a":"De juiste techniek wordt tijdens een consult bepaald op basis van uw haar en gewenste resultaat.",
+
+        "faq3.q":"Kan ik eerst een consult krijgen?",
+        "faq3.a":"Ja, u kunt via WhatsApp contact met ons opnemen om de details te bespreken.",
+
+        "faq4.q":"Hoe maak ik een afspraak?",
+        "faq4.a":"Stuur ons een bericht via WhatsApp om een geschikt moment af te spreken.",
+
+        "location.title":"Onze locatie",
+        "location.text":"Adres wordt toegevoegd na bevestiging.",
+
+        "cta.title":"Klaar om te boeken?",
+        "cta.text":"Stuur ons een bericht via WhatsApp.",
+        "cta.button":"Schrijf via WhatsApp"
+    },
+
+
+    en:{
+
+        "nav.home":"Home",
+        "nav.services":"Services",
+        "nav.prices":"Prices",
+        "nav.works":"Our Work",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Contact",
+        "hero.text":"Contact us for an appointment and consultation.",
+
+        "section.small":"CONTACT",
+        "section.title":"Get in touch",
+
+        "info.title":"Contact information",
+        "info.whatsapp.label":"WHATSAPP",
+        "info.address.label":"ADDRESS",
+        "info.address.text":"Address will be added",
+        "info.hours.label":"OPENING HOURS",
+        "info.hours.text":"By appointment",
+        "info.languages.label":"LANGUAGES",
+        "info.languages.text":"Nederlands · English · Русский · Українська",
+
+        "form.title":"Book an appointment",
+        "form.name":"Your name",
+        "form.service":"Which service are you interested in?",
+        "form.message":"Your message",
+        "form.button":"Send via WhatsApp",
+
+        "process.small":"BOOKING",
+        "process.title":"How booking works",
+
+        "step1.title":"Message",
+        "step1.text":"Contact us through WhatsApp.",
+
+        "step2.title":"Consultation",
+        "step2.text":"We discuss your desired length, volume and technique.",
+
+        "step3.title":"Choice",
+        "step3.text":"We choose the right option for your hair.",
+
+        "step4.title":"Appointment",
+        "step4.text":"We agree on a convenient appointment time.",
+
+        "faq.small":"FAQ",
+        "faq.title":"Frequently asked questions",
+
+        "faq1.q":"How long does the treatment take?",
+        "faq1.a":"The duration depends on the chosen technique, amount and length of hair.",
+
+        "faq2.q":"How do I choose the right technique?",
+        "faq2.a":"The right technique is determined during a consultation based on your hair and desired result.",
+
+        "faq3.q":"Can I have a consultation first?",
+        "faq3.a":"Yes, you can contact us through WhatsApp to discuss the details.",
+
+        "faq4.q":"How can I book?",
+        "faq4.a":"Send us a WhatsApp message to arrange a convenient time.",
+
+        "location.title":"Our location",
+        "location.text":"Address will be added after confirmation.",
+
+        "cta.title":"Ready to book?",
+        "cta.text":"Send us a message on WhatsApp.",
+        "cta.button":"Write on WhatsApp"
+    },
+
+
+    ua:{
+
+        "nav.home":"Головна",
+        "nav.services":"Послуги",
+        "nav.prices":"Ціни",
+        "nav.works":"Роботи",
+        "nav.reviews":"Відгуки",
+        "nav.contact":"Контакти",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Контакти",
+        "hero.text":"Зв'яжіться з нами для запису та консультації.",
+
+        "section.small":"CONTACT",
+        "section.title":"Зв'яжіться з нами",
+
+        "info.title":"Контактна інформація",
+        "info.whatsapp.label":"WHATSAPP",
+        "info.address.label":"АДРЕСА",
+        "info.address.text":"Адресу буде додано",
+        "info.hours.label":"ГОДИНИ РОБОТИ",
+        "info.hours.text":"За записом",
+        "info.languages.label":"МОВИ",
+        "info.languages.text":"Nederlands · English · Русский · Українська",
+
+        "form.title":"Запис",
+        "form.name":"Ваше ім'я",
+        "form.service":"Яка послуга вас цікавить?",
+        "form.message":"Ваше повідомлення",
+        "form.button":"Надіслати у WhatsApp",
+
+        "process.small":"BOOKING",
+        "process.title":"Як проходить запис",
+
+        "step1.title":"Повідомлення",
+        "step1.text":"Зв'яжіться з нами через WhatsApp.",
+
+        "step2.title":"Консультація",
+        "step2.text":"Обговорюємо бажану довжину, об'єм та техніку.",
+
+        "step3.title":"Вибір",
+        "step3.text":"Підбираємо відповідний варіант для вашого волосся.",
+
+        "step4.title":"Запис",
+        "step4.text":"Погоджуємо зручний час візиту.",
+
+        "faq.small":"FAQ",
+        "faq.title":"Часті запитання",
+
+        "faq1.q":"Скільки триває процедура?",
+        "faq1.a":"Час залежить від обраної техніки, кількості та довжини волосся.",
+
+        "faq2.q":"Як обрати відповідну техніку?",
+        "faq2.a":"Відповідна техніка визначається після консультації з урахуванням вашого волосся та бажаного результату.",
+
+        "faq3.q":"Чи можна спочатку отримати консультацію?",
+        "faq3.a":"Так, ви можете зв'язатися з нами через WhatsApp та обговорити деталі.",
+
+        "faq4.q":"Як записатися?",
+        "faq4.a":"Напишіть нам у WhatsApp, щоб узгодити зручний час.",
+
+        "location.title":"Наше розташування",
+        "location.text":"Адресу буде додано після підтвердження.",
+
+        "cta.title":"Готові записатися?",
+        "cta.text":"Напишіть нам у WhatsApp.",
+        "cta.button":"Написати у WhatsApp"
+    }
+
+};
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+    if(!translations[lang]){
+        lang="nl";
+    }
+
+    const languageData=translations[lang];
+
+    document.documentElement.lang=lang;
+
+
+    document.querySelectorAll("[data-i18n]").forEach(function(element){
+
+        const key=element.getAttribute("data-i18n");
+
+        if(
+            Object.prototype.hasOwnProperty.call(
+                languageData,
+                key
+            )
+        ){
+
+            element.textContent=languageData[key];
+
+        }
+
+    });
+
+
+    document.querySelectorAll("[data-placeholder]").forEach(function(element){
+
+        const key=element.getAttribute("data-placeholder");
+
+        if(
+            Object.prototype.hasOwnProperty.call(
+                languageData,
+                key
+            )
+        ){
+
+            element.placeholder=languageData[key];
+
+        }
+
+    });
+
+
+    document.querySelectorAll(".lang-btn").forEach(function(button){
+
+        button.classList.remove("active");
+
+        if(button.dataset.lang===lang){
+            button.classList.add("active");
+        }
+
+    });
+
+
+    try{
+
+        localStorage.setItem("lunaLanguage",lang);
+
+    }catch(error){
+
+        console.log("Language storage unavailable");
+
+    }
+
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("nav")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* ================= FAQ ================= */
+
+function toggleFaq(element){
+
+    element
+        .parentElement
+        .classList
+        .toggle("open");
+
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function sendWhatsApp(event){
+
+    event.preventDefault();
+
+
+    const name=
+        document
+            .getElementById("name")
+            .value
+            .trim();
+
+
+    const service=
+        document
+            .getElementById("service")
+            .value
+            .trim();
+
+
+    const message=
+        document
+            .getElementById("message")
+            .value
+            .trim();
+
+
+    const text=
+        "Hello LUNA HAIR!\n\n"+
+        "Name: "+name+"\n"+
+        "Service: "+service+"\n"+
+        "Message: "+message;
+
+
+    window.open(
+        "https://wa.me/31614664933?text="+
+        encodeURIComponent(text),
+        "_blank"
+    );
+
+}
+
+
+/* ================= START ================= */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    let savedLanguage="nl";
+
+
+    try{
+
+        const saved=
+            localStorage.getItem("lunaLanguage");
+
+
+        if(
+            saved &&
+            Object.prototype.hasOwnProperty.call(
+                translations,
+                saved
+            )
+        ){
+
+            savedLanguage=saved;
+
+        }
+
+    }catch(error){
+
+        savedLanguage="nl";
+
+    }
+
+
+    setLanguage(savedLanguage);
+
+
+    /* CLOSE MOBILE MENU */
+
+    document.querySelectorAll("nav a").forEach(function(link){
+
+        link.addEventListener("click",function(){
+
+            document
+                .getElementById("nav")
+                .classList
+                .remove("open");
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

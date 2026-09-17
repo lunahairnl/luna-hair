@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUNA HAIR — Reviews</title>
+
+<style>
+
+:root{
+    --cream:#EAE2D5;
+    --light:#F8F5EF;
+    --brown:#241B17;
+    --soft-brown:#332722;
+    --gold:#BFA06A;
+    --light-gold:#D8C59A;
+    --text:#29211D;
+    --muted:#746960;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+    background:rgba(36,27,23,.97);
+    border-bottom:1px solid rgba(191,160,106,.45);
+    z-index:1000;
+}
+
+.header-inner{
+    max-width:1400px;
+    height:100%;
+    margin:auto;
+    padding:0 35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:var(--light-gold);
+    font-size:26px;
+    letter-spacing:5px;
+    font-weight:400;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+nav a{
+    color:#f8f5ef;
+    font-size:13px;
+    letter-spacing:1.5px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+.languages{
+    display:flex;
+    gap:6px;
+    margin-left:10px;
+}
+
+.languages button{
+    background:transparent;
+    border:1px solid rgba(216,197,154,.45);
+    color:#f8f5ef;
+    padding:7px 9px;
+    font-size:11px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.languages button:hover,
+.languages button.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--brown);
+}
+
+.whatsapp{
+    border:1px solid var(--gold);
+    color:var(--light-gold);
+    padding:10px 17px;
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--light-gold);
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:620px;
+    margin-top:82px;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            rgba(36,27,23,.25),
+            rgba(36,27,23,.72)
+        ),
+        url("./images/12.jpeg") center/cover no-repeat;
+
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:70px 35px;
+    color:white;
+}
+
+.hero-content span{
+    color:var(--light-gold);
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.hero-content h1{
+    margin-top:15px;
+    font-size:64px;
+    font-weight:300;
+    letter-spacing:3px;
+}
+
+.hero-content p{
+    max-width:600px;
+    margin-top:20px;
+    color:#eee6dc;
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* ================= REVIEWS ================= */
+
+.reviews-section{
+    max-width:1400px;
+    margin:auto;
+    padding:100px 35px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    margin-top:15px;
+    font-size:44px;
+    font-weight:300;
+    letter-spacing:2px;
+}
+
+.section-title p{
+    max-width:650px;
+    margin:18px auto 0;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* ================= REVIEW FORM ================= */
+
+.review-form{
+    max-width:760px;
+    margin:0 auto 80px;
+
+    background:var(--light);
+    border:1px solid rgba(191,160,106,.55);
+
+    padding:45px;
+}
+
+.form-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.form-title h3{
+    font-size:30px;
+    font-weight:300;
+    letter-spacing:1px;
+}
+
+.form-title p{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* STARS */
+
+.rating-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.rating-label{
+    display:block;
+    margin-bottom:15px;
+
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.stars-input{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+
+    direction:rtl;
+}
+
+.stars-input input{
+    display:none;
+}
+
+.stars-input label{
+    font-size:40px;
+    color:#d5cec5;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.stars-input label:hover,
+.stars-input label:hover ~ label,
+.stars-input input:checked ~ label{
+    color:var(--gold);
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    border:1px solid rgba(116,105,96,.35);
+    background:#fffdf9;
+
+    padding:14px 16px;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+
+    color:var(--text);
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+}
+
+.form-group textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.submit-review{
+    width:100%;
+
+    border:1px solid var(--gold);
+    background:var(--brown);
+    color:var(--light-gold);
+
+    padding:16px;
+
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit-review:hover{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+/* ================= REVIEWS GRID ================= */
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review-card{
+    background:var(--light);
+
+    border:1px solid rgba(191,160,106,.45);
+
+    padding:35px 30px;
+
+    min-height:290px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.35s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+    box-shadow:0 18px 45px rgba(36,27,23,.12);
+}
+
+.review-stars{
+    display:flex;
+    gap:4px;
+    margin-bottom:22px;
+}
+
+.review-stars span{
+    font-size:20px;
+    color:var(--gold);
+}
+
+.review-text{
+    font-family:Georgia,serif;
+    font-size:18px;
+    line-height:1.7;
+    color:#443a34;
+}
+
+.review-author{
+    border-top:1px solid rgba(191,160,106,.35);
+    padding-top:17px;
+    margin-top:25px;
+}
+
+.review-name{
+    color:var(--gold);
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.review-date{
+    margin-top:6px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.no-reviews{
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:55px 20px;
+
+    border:1px solid rgba(191,160,106,.4);
+    background:rgba(248,245,239,.65);
+
+    color:var(--muted);
+}
+
+.no-reviews h3{
+    color:var(--text);
+    font-size:25px;
+    font-weight:300;
+    margin-bottom:12px;
+}
+
+.no-reviews p{
+    line-height:1.7;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:var(--brown);
+
+    padding:90px 35px;
+
+    text-align:center;
+
+    color:white;
+}
+
+.cta span{
+    color:var(--gold);
+
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.cta h2{
+    margin:18px 0 25px;
+
+    font-size:44px;
+    font-weight:300;
+    letter-spacing:2px;
+}
+
+.cta p{
+    max-width:620px;
+    margin:0 auto 35px;
+
+    color:#ddd3c8;
+
+    line-height:1.7;
+}
+
+.cta a{
+    display:inline-block;
+
+    border:1px solid var(--gold);
+    color:var(--light-gold);
+
+    padding:15px 30px;
+
+    letter-spacing:1.5px;
+    font-size:12px;
+
+    transition:.3s;
+}
+
+.cta a:hover{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#1b1411;
+
+    color:#bfb4aa;
+
+    text-align:center;
+
+    padding:25px;
+
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    nav{
+        position:absolute;
+
+        top:82px;
+        left:0;
+
+        width:100%;
+
+        background:var(--brown);
+
+        border-bottom:1px solid rgba(191,160,106,.4);
+
+        display:none;
+
+        flex-direction:column;
+        align-items:center;
+
+        gap:22px;
+
+        padding:30px 20px;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    .languages{
+        margin-left:0;
+    }
+
+    .whatsapp{
+        margin-top:5px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .reviews-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-content h1{
+        font-size:50px;
+    }
+}
+
+@media(max-width:650px){
+
+    header{
+        height:72px;
+    }
+
+    .header-inner{
+        padding:0 20px;
+    }
+
+    .logo{
+        font-size:21px;
+        letter-spacing:4px;
+    }
+
+    nav{
+        top:72px;
+    }
+
+    .hero{
+        height:480px;
+        margin-top:72px;
+    }
+
+    .hero-content{
+        padding:45px 20px;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+        line-height:1.1;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    .reviews-section{
+        padding:70px 20px;
+    }
+
+    .section-title{
+        margin-bottom:40px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .review-form{
+        padding:28px 20px;
+        margin-bottom:55px;
+    }
+
+    .form-title h3{
+        font-size:25px;
+    }
+
+    .stars-input label{
+        font-size:34px;
+    }
+
+    .reviews-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .review-card{
+        min-height:270px;
+    }
+
+    .cta{
+        padding:70px 20px;
+    }
+
+    .cta h2{
+        font-size:34px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            LUNA HAIR
+        </a>
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Menu"
+        >
+            ☰
+        </button>
+
+        <nav id="nav">
+
+            <a href="index.html" data-i18n="nav.home">
+                Главная
+            </a>
+
+            <a href="services.html" data-i18n="nav.services">
+                Услуги
+            </a>
+
+            <a href="prices.html" data-i18n="nav.prices">
+                Цены
+            </a>
+
+            <a href="works.html" data-i18n="nav.works">
+                Работы
+            </a>
+
+            <a href="reviews.html" data-i18n="nav.reviews">
+                Отзывы
+            </a>
+
+            <a href="contact.html" data-i18n="nav.contact">
+                Контакты
+            </a>
+
+            <div class="languages">
+
+                <button
+                    class="lang-btn"
+                    data-lang="nl"
+                    onclick="setLanguage('nl')"
+                >
+                    NL
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="en"
+                    onclick="setLanguage('en')"
+                >
+                    EN
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ru"
+                    onclick="setLanguage('ru')"
+                >
+                    RU
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ua"
+                    onclick="setLanguage('ua')"
+                >
+                    UA
+                </button>
+
+            </div>
+
+            <a
+                href="https://wa.me/31614664933"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp"
+                data-i18n="nav.whatsapp"
+            >
+                WhatsApp
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span>
+            LUNA HAIR
+        </span>
+
+        <h1 data-i18n="hero.title">
+            Отзывы клиентов
+        </h1>
+
+        <p data-i18n="hero.text">
+            Ваше мнение важно для нас. Оставьте свой отзыв после посещения.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews-section">
+
+    <div class="section-title">
+
+        <span data-i18n="section.small">
+            ОТЗЫВЫ КЛИЕНТОВ
+        </span>
+
+        <h2 data-i18n="section.title">
+            Отзывы наших клиентов
+        </h2>
+
+        <p data-i18n="section.text">
+            Оценку от 1 до 5 звёзд выбирает сам клиент.
+        </p>
+
+    </div>
+
+
+    <!-- ================= FORM ================= -->
+
+    <div class="review-form">
+
+        <div class="form-title">
+
+            <h3 data-i18n="form.title">
+                Оставить отзыв
+            </h3>
+
+            <p data-i18n="form.text">
+                Расскажите о своём опыте в LUNA HAIR.
+            </p>
+
+        </div>
+
+
+        <form id="reviewForm">
+
+            <!-- RATING -->
+
+            <div class="rating-box">
+
+                <span
+                    class="rating-label"
+                    data-i18n="form.rating"
+                >
+                    Ваша оценка
+                </span>
+
+                <div class="stars-input">
+
+                    <input
+                        type="radio"
+                        id="star5"
+                        name="rating"
+                        value="5"
+                        required
+                    >
+
+                    <label for="star5" title="5">★</label>
+
+
+                    <input
+                        type="radio"
+                        id="star4"
+                        name="rating"
+                        value="4"
+                    >
+
+                    <label for="star4" title="4">★</label>
+
+
+                    <input
+                        type="radio"
+                        id="star3"
+                        name="rating"
+                        value="3"
+                    >
+
+                    <label for="star3" title="3">★</label>
+
+
+                    <input
+                        type="radio"
+                        id="star2"
+                        name="rating"
+                        value="2"
+                    >
+
+                    <label for="star2" title="2">★</label>
+
+
+                    <input
+                        type="radio"
+                        id="star1"
+                        name="rating"
+                        value="1"
+                    >
+
+                    <label for="star1" title="1">★</label>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label
+                    for="reviewName"
+                    data-i18n="form.name"
+                >
+                    Ваше имя
+                </label>
+
+                <input
+                    type="text"
+                    id="reviewName"
+                    required
+                    maxlength="60"
+                    placeholder="Ваше имя"
+                    data-placeholder="name"
+                >
+
+            </div>
+
+
+            <!-- REVIEW -->
+
+            <div class="form-group">
+
+                <label
+                    for="reviewText"
+                    data-i18n="form.review"
+                >
+                    Ваш отзыв
+                </label>
+
+                <textarea
+                    id="reviewText"
+                    required
+                    maxlength="1000"
+                    placeholder="Напишите ваш отзыв..."
+                    data-placeholder="review"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-review"
+                data-i18n="form.button"
+            >
+                Отправить отзыв
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ================= REVIEWS LIST ================= -->
+
+    <div
+        class="reviews-grid"
+        id="reviewsList"
+    >
+
+        <div class="no-reviews">
+
+            <h3 data-i18n="empty.title">
+                Пока нет отзывов
+            </h3>
+
+            <p data-i18n="empty.text">
+                Ваш отзыв может стать первым.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <span>
+        LUNA HAIR
+    </span>
+
+    <h2 data-i18n="cta.title">
+        Хотите записаться?
+    </h2>
+
+    <p data-i18n="cta.text">
+        Напишите нам в WhatsApp, чтобы узнать подробности и выбрать удобное время.
+    </p>
+
+    <a
+        href="https://wa.me/31614664933"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="cta.button"
+    >
+        Написать в WhatsApp
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 LUNA HAIR
+</footer>
+
+
+<script>
+
+/* ================= TRANSLATIONS ================= */
+
+const translations = {
+
+    ru:{
+
+        nav:{
+            home:"Главная",
+            services:"Услуги",
+            prices:"Цены",
+            works:"Работы",
+            reviews:"Отзывы",
+            contact:"Контакты",
+            whatsapp:"WhatsApp"
+        },
+
+        hero:{
+            title:"Отзывы клиентов",
+            text:"Ваше мнение важно для нас. Оставьте свой отзыв после посещения."
+        },
+
+        section:{
+            small:"ОТЗЫВЫ КЛИЕНТОВ",
+            title:"Отзывы наших клиентов",
+            text:"Оценку от 1 до 5 звёзд выбирает сам клиент."
+        },
+
+        form:{
+            title:"Оставить отзыв",
+            text:"Расскажите о своём опыте в LUNA HAIR.",
+            rating:"Ваша оценка",
+            name:"Ваше имя",
+            review:"Ваш отзыв",
+            button:"Отправить отзыв"
+        },
+
+        empty:{
+            title:"Пока нет отзывов",
+            text:"Ваш отзыв может стать первым."
+        },
+
+        cta:{
+            title:"Хотите записаться?",
+            text:"Напишите нам в WhatsApp, чтобы узнать подробности и выбрать удобное время.",
+            button:"Написать в WhatsApp"
+        }
+
+    },
+
+
+    nl:{
+
+        nav:{
+            home:"Home",
+            services:"Diensten",
+            prices:"Prijzen",
+            works:"Werk",
+            reviews:"Reviews",
+            contact:"Contact",
+            whatsapp:"WhatsApp"
+        },
+
+        hero:{
+            title:"Klantreviews",
+            text:"Uw mening is belangrijk voor ons. Laat na uw bezoek een review achter."
+        },
+
+        section:{
+            small:"KLANTREVIEWS",
+            title:"Reviews van onze klanten",
+            text:"De klant kiest zelf een beoordeling van 1 tot 5 sterren."
+        },
+
+        form:{
+            title:"Een review achterlaten",
+            text:"Vertel over uw ervaring bij LUNA HAIR.",
+            rating:"Uw beoordeling",
+            name:"Uw naam",
+            review:"Uw review",
+            button:"Review versturen"
+        },
+
+        empty:{
+            title:"Nog geen reviews",
+            text:"Uw review kan de eerste zijn."
+        },
+
+        cta:{
+            title:"Wilt u een afspraak maken?",
+            text:"Stuur ons een bericht via WhatsApp voor meer informatie en om een geschikt tijdstip te kiezen.",
+            button:"Bericht via WhatsApp"
+        }
+
+    },
+
+
+    en:{
+
+        nav:{
+            home:"Home",
+            services:"Services",
+            prices:"Prices",
+            works:"Work",
+            reviews:"Reviews",
+            contact:"Contact",
+            whatsapp:"WhatsApp"
+        },
+
+        hero:{
+            title:"Client Reviews",
+            text:"Your opinion matters to us. Leave a review after your visit."
+        },
+
+        section:{
+            small:"CLIENT REVIEWS",
+            title:"Reviews from our clients",
+            text:"Each client chooses their own rating from 1 to 5 stars."
+        },
+
+        form:{
+            title:"Leave a Review",
+            text:"Tell us about your experience at LUNA HAIR.",
+            rating:"Your rating",
+            name:"Your name",
+            review:"Your review",
+            button:"Submit Review"
+        },
+
+        empty:{
+            title:"No reviews yet",
+            text:"Your review can be the first."
+        },
+
+        cta:{
+            title:"Would you like to book?",
+            text:"Send us a message on WhatsApp to get more information and choose a convenient time.",
+            button:"Message on WhatsApp"
+        }
+
+    },
+
+
+    ua:{
+
+        nav:{
+            home:"Головна",
+            services:"Послуги",
+            prices:"Ціни",
+            works:"Роботи",
+            reviews:"Відгуки",
+            contact:"Контакти",
+            whatsapp:"WhatsApp"
+        },
+
+        hero:{
+            title:"Відгуки клієнтів",
+            text:"Ваша думка важлива для нас. Залиште відгук після відвідування."
+        },
+
+        section:{
+            small:"ВІДГУКИ КЛІЄНТІВ",
+            title:"Відгуки наших клієнтів",
+            text:"Кожен клієнт сам обирає оцінку від 1 до 5 зірок."
+        },
+
+        form:{
+            title:"Залишити відгук",
+            text:"Розкажіть про свій досвід у LUNA HAIR.",
+            rating:"Ваша оцінка",
+            name:"Ваше ім'я",
+            review:"Ваш відгук",
+            button:"Надіслати відгук"
+        },
+
+        empty:{
+            title:"Поки немає відгуків",
+            text:"Ваш відгук може стати першим."
+        },
+
+        cta:{
+            title:"Хочете записатися?",
+            text:"Напишіть нам у WhatsApp, щоб дізнатися подробиці та обрати зручний час.",
+            button:"Написати у WhatsApp"
+        }
+
+    }
+
+};
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+    if(!translations[lang]){
+        lang="nl";
+    }
+
+    const languageData=translations[lang];
+
+    document.documentElement.lang=lang;
+
+
+    document.querySelectorAll("[data-i18n]").forEach(element=>{
+
+        const key=element.getAttribute("data-i18n");
+
+        const keys=key.split(".");
+
+        let value=languageData;
+
+        keys.forEach(function(part){
+            value=value?.[part];
+        });
+
+        if(value!==undefined){
+            element.textContent=value;
+        }
+
+    });
+
+
+    document.querySelectorAll("[data-placeholder]").forEach(element=>{
+
+        const type=element.dataset.placeholder;
+
+        if(lang==="ru"){
+
+            element.placeholder=
+                type==="name"
+                ? "Ваше имя"
+                : "Напишите ваш отзыв...";
+
+        }
+
+        if(lang==="nl"){
+
+            element.placeholder=
+                type==="name"
+                ? "Uw naam"
+                : "Schrijf uw review...";
+
+        }
+
+        if(lang==="en"){
+
+            element.placeholder=
+                type==="name"
+                ? "Your name"
+                : "Write your review...";
+
+        }
+
+        if(lang==="ua"){
+
+            element.placeholder=
+                type==="name"
+                ? "Ваше ім'я"
+                : "Напишіть ваш відгук...";
+
+        }
+
+    });
+
+
+    document.querySelectorAll(".lang-btn").forEach(button=>{
+
+        button.classList.remove("active");
+
+        if(button.dataset.lang===lang){
+            button.classList.add("active");
+        }
+
+    });
+
+
+    try{
+
+        localStorage.setItem("lunaLanguage",lang);
+
+    }catch(error){
+
+        console.log("Language storage unavailable");
+
+    }
+
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("nav")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* ================= REVIEWS ================= */
+
+let reviews=[];
+
+
+/*
+    Отзывы пока сохраняются только
+    в памяти текущей страницы.
+
+    Для настоящего сайта следующим шагом
+    можно подключить базу данных.
+*/
+
+function renderReviews(){
+
+    const container=document.getElementById("reviewsList");
+
+    if(reviews.length===0){
+
+        container.innerHTML=`
+
+            <div class="no-reviews">
+
+                <h3 data-i18n="empty.title">
+                    Пока нет отзывов
+                </h3>
+
+                <p data-i18n="empty.text">
+                    Ваш отзыв может стать первым.
+                </p>
+
+            </div>
+
+        `;
+
+        let currentLanguage="nl";
+
+        try{
+
+            const savedLanguage=
+                localStorage.getItem("lunaLanguage");
+
+            if(
+                savedLanguage &&
+                Object.prototype.hasOwnProperty.call(
+                    translations,
+                    savedLanguage
+                )
+            ){
+
+                currentLanguage=savedLanguage;
+
+            }
+
+        }catch(error){
+
+            currentLanguage="nl";
+
+        }
+
+        setLanguage(currentLanguage);
+
+        return;
+
+    }
+
+
+    container.innerHTML="";
+
+
+    reviews.forEach(review=>{
+
+        const card=document.createElement("article");
+
+        card.className="review-card";
+
+
+        let stars="";
+
+        for(let i=1;i<=5;i++){
+
+            if(i<=review.rating){
+
+                stars+="<span>★</span>";
+
+            }else{
+
+                stars+=
+                    '<span style="color:#d5cec5">★</span>';
+
+            }
+
+        }
+
+
+        card.innerHTML=`
+
+            <div>
+
+                <div class="review-stars">
+                    ${stars}
+                </div>
+
+                <div class="review-text">
+                    ${escapeHTML(review.text)}
+                </div>
+
+            </div>
+
+            <div class="review-author">
+
+                <div class="review-name">
+                    ${escapeHTML(review.name)}
+                </div>
+
+                <div class="review-date">
+                    ${review.date}
+                </div>
+
+            </div>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* ================= SECURITY ================= */
+
+function escapeHTML(text){
+
+    const div=document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
+
+}
+
+
+/* ================= FORM ================= */
+
+document
+    .getElementById("reviewForm")
+    .addEventListener("submit",function(event){
+
+        event.preventDefault();
+
+
+        const name=
+            document
+                .getElementById("reviewName")
+                .value
+                .trim();
+
+
+        const text=
+            document
+                .getElementById("reviewText")
+                .value
+                .trim();
+
+
+        const ratingElement=
+            document.querySelector(
+                'input[name="rating"]:checked'
+            );
+
+
+        if(!ratingElement){
+
+            alert(
+                "Пожалуйста, выберите количество звёзд."
+            );
+
+            return;
+
+        }
+
+
+        const rating=
+            Number(ratingElement.value);
+
+
+        const review={
+
+            name:name,
+
+            text:text,
+
+            rating:rating,
+
+            date:new Date().toLocaleDateString()
+
+        };
+
+
+        reviews.unshift(review);
+
+
+        renderReviews();
+
+
+        this.reset();
+
+
+        alert("Спасибо за ваш отзыв!");
+
+    });
+
+
+/* ================= START ================= */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    let savedLanguage="nl";
+
+    try{
+
+        const saved=
+            localStorage.getItem("lunaLanguage");
+
+        if(
+            saved &&
+            Object.prototype.hasOwnProperty.call(
+                translations,
+                saved
+            )
+        ){
+
+            savedLanguage=saved;
+
+        }
+
+    }catch(error){
+
+        savedLanguage="nl";
+
+    }
+
+
+    setLanguage(savedLanguage);
+
+    renderReviews();
+
+});
+
+
+/* ================= CLOSE MOBILE MENU ================= */
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        document
+            .getElementById("nav")
+            .classList
+            .remove("open");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

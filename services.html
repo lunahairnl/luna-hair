@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUNA HAIR — Услуги</title>
+
+<style>
+:root{
+    --cream:#EAE2D5;
+    --light:#F8F5EF;
+    --brown:#241B17;
+    --soft-brown:#332722;
+    --gold:#BFA06A;
+    --light-gold:#D8C59A;
+    --text:#29211D;
+    --muted:#746960;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(36,27,23,.97);
+    border-bottom:1px solid rgba(191,160,106,.45);
+}
+
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+}
+
+.logo{
+    color:var(--gold);
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:4px;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--light-gold);
+}
+
+.languages{
+    display:flex;
+    gap:5px;
+    margin-left:10px;
+}
+
+.languages button{
+    border:1px solid rgba(191,160,106,.6);
+    background:transparent;
+    color:#fff;
+    padding:7px 9px;
+    cursor:pointer;
+    font-size:11px;
+    transition:.3s;
+}
+
+.languages button:hover,
+.languages button.active{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+.whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 16px;
+    background:var(--gold);
+    color:var(--brown);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    margin-left:10px;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    background:var(--light-gold);
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--gold);
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    margin-top:82px;
+    height:470px;
+    position:relative;
+    overflow:hidden;
+    background:var(--brown);
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(36,27,23,.85),
+        rgba(36,27,23,.15)
+    );
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1250px;
+    margin:auto;
+    padding:50px 30px;
+    color:#fff;
+}
+
+.hero-content h1{
+    font-size:52px;
+    font-weight:400;
+    letter-spacing:4px;
+    margin-bottom:12px;
+}
+
+.hero-content p{
+    max-width:650px;
+    font-size:17px;
+    line-height:1.7;
+    color:#eee;
+}
+
+/* MAIN */
+
+main{
+    max-width:1250px;
+    margin:auto;
+    padding:80px 30px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    font-weight:400;
+    letter-spacing:3px;
+    margin-bottom:50px;
+    color:var(--brown);
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.service-card{
+    position:relative;
+    min-height:430px;
+    overflow:hidden;
+    background:var(--brown);
+    border:1px solid rgba(191,160,106,.35);
+}
+
+.service-card:first-child{
+    grid-column:span 2;
+    min-height:500px;
+}
+
+.service-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+.service-card:hover img{
+    transform:scale(1.04);
+}
+
+.service-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(36,27,23,.96) 0%,
+        rgba(36,27,23,.62) 45%,
+        rgba(36,27,23,.08) 100%
+    );
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:35px;
+}
+
+.service-overlay h3{
+    color:#fff;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.service-overlay p{
+    color:#eee;
+    line-height:1.6;
+    max-width:700px;
+    font-size:15px;
+}
+
+.service-btn{
+    display:inline-block;
+    width:max-content;
+    margin-top:20px;
+    padding:11px 20px;
+    border:1px solid var(--gold);
+    color:var(--light-gold);
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.service-btn:hover{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+/* EXTRA SERVICES */
+
+.extra-section{
+    margin-top:95px;
+}
+
+.extra-title{
+    color:var(--gold) !important;
+    text-align:center;
+    font-size:42px;
+    font-weight:400;
+    letter-spacing:3px;
+    margin-bottom:45px;
+}
+
+.extra-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.extra-card{
+    background:var(--brown);
+    border:1px solid rgba(191,160,106,.4);
+    padding:40px;
+    min-height:250px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.extra-card h3{
+    color:var(--light-gold);
+    font-size:25px;
+    font-weight:400;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.extra-card p{
+    color:#eee;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.extra-price{
+    color:var(--gold);
+    font-size:24px;
+    margin-top:25px;
+    letter-spacing:1px;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:90px;
+    background:var(--brown);
+    padding:65px 30px;
+    text-align:center;
+    border:1px solid rgba(191,160,106,.35);
+}
+
+.cta h2{
+    color:#fff;
+    font-size:38px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#ddd;
+    font-size:16px;
+    margin-bottom:28px;
+}
+
+.cta a{
+    display:inline-block;
+    padding:14px 28px;
+    background:var(--gold);
+    color:var(--brown);
+    text-decoration:none;
+    font-weight:700;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.cta a:hover{
+    background:var(--light-gold);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--brown);
+    color:#aaa;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:80px;
+    border-top:1px solid rgba(191,160,106,.25);
+}
+
+footer span{
+    color:var(--gold);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .header-inner{
+        min-height:70px;
+        padding:0 20px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:var(--brown);
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:15px 20px 25px;
+        border-top:1px solid rgba(191,160,106,.3);
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    nav a{
+        padding:14px 0;
+        border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .languages{
+        margin:15px 0 5px;
+        justify-content:center;
+    }
+
+    .languages button{
+        flex:1;
+        max-width:70px;
+    }
+
+    .whatsapp{
+        margin:12px 0 0;
+        text-align:center;
+    }
+
+    .hero{
+        margin-top:70px;
+        height:430px;
+    }
+
+    .hero-content{
+        padding:35px 20px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    main{
+        padding:60px 20px;
+    }
+
+    .section-title{
+        font-size:32px;
+        margin-bottom:35px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-card,
+    .service-card:first-child{
+        grid-column:auto;
+        min-height:420px;
+    }
+
+    .service-overlay{
+        padding:25px;
+    }
+
+    .service-overlay h3{
+        font-size:25px;
+    }
+
+    .extra-section{
+        margin-top:70px;
+    }
+
+    .extra-title{
+        font-size:30px;
+        line-height:1.3;
+        margin-bottom:30px;
+    }
+
+    .extra-grid{
+        grid-template-columns:1fr;
+    }
+
+    .extra-card{
+        padding:30px;
+    }
+
+    .cta{
+        margin-top:65px;
+        padding:50px 20px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+    footer{
+        margin-top:60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            LUNA HAIR
+        </a>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Menu"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNav">
+
+            <a
+                href="index.html"
+                data-i18n="nav.home"
+            >
+                Главная
+            </a>
+
+            <a
+                href="services.html"
+                data-i18n="nav.services"
+            >
+                Услуги
+            </a>
+
+            <a
+                href="prices.html"
+                data-i18n="nav.prices"
+            >
+                Цены
+            </a>
+
+            <a
+                href="works.html"
+                data-i18n="nav.works"
+            >
+                Работы
+            </a>
+
+            <a
+                href="reviews.html"
+                data-i18n="nav.reviews"
+            >
+                Отзывы
+            </a>
+
+            <a
+                href="contact.html"
+                data-i18n="nav.contact"
+            >
+                Контакты
+            </a>
+
+            <div class="languages">
+
+                <button
+                    class="lang-btn"
+                    data-lang="nl"
+                    onclick="setLanguage('nl')"
+                >
+                    NL
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="en"
+                    onclick="setLanguage('en')"
+                >
+                    EN
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ru"
+                    onclick="setLanguage('ru')"
+                >
+                    RU
+                </button>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ua"
+                    onclick="setLanguage('ua')"
+                >
+                    UA
+                </button>
+
+            </div>
+
+            <a
+                href="https://wa.me/31614664933"
+                class="whatsapp"
+                target="_blank"
+                data-i18n="nav.whatsapp"
+            >
+                WhatsApp
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <img
+        src="./images/service-hair.jpg"
+        alt="Hair extensions"
+    >
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <h1 data-i18n="hero.title">
+                УСЛУГИ
+            </h1>
+
+            <p data-i18n="hero.text">
+                Профессиональное наращивание волос, коррекция,
+                капсуляция и снятие с вниманием к качеству ваших волос.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    <h2
+        class="section-title"
+        data-i18n="services.title"
+    >
+        НАШИ УСЛУГИ
+    </h2>
+
+
+    <div class="services-grid">
+
+
+        <!-- НАРАЩИВАНИЕ -->
+
+        <article class="service-card">
+
+            <img
+                src="./images/service-hair.jpg"
+                alt="Hair extensions"
+            >
+
+            <div class="service-overlay">
+
+                <h3 data-i18n="service1.title">
+                    Наращивание волос
+                </h3>
+
+                <p data-i18n="service1.text">
+                    Подбор длины, объёма и оттенка с учётом
+                    структуры и состояния ваших волос.
+                </p>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    class="service-btn"
+                    target="_blank"
+                    data-i18n="service.button"
+                >
+                    ЗАПИСАТЬСЯ
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- NANO -->
+
+        <article class="service-card">
+
+            <img
+                src="./images/service-nano.jpg"
+                alt="Nano hair extensions"
+            >
+
+            <div class="service-overlay">
+
+                <h3 data-i18n="service2.title">
+                    Nano
+                </h3>
+
+                <p data-i18n="service2.text">
+                    Техника с очень маленькими и аккуратными
+                    креплениями для максимально естественного результата.
+                </p>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    class="service-btn"
+                    target="_blank"
+                    data-i18n="service.button"
+                >
+                    ЗАПИСАТЬСЯ
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- MICRO -->
+
+        <article class="service-card">
+
+            <img
+                src="./images/service-micro.jpg"
+                alt="Micro hair extensions"
+            >
+
+            <div class="service-overlay">
+
+                <h3 data-i18n="service3.title">
+                    Micro
+                </h3>
+
+                <p data-i18n="service3.text">
+                    Точная и деликатная техника крепления,
+                    подходящая для создания дополнительного объёма и длины.
+                </p>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    class="service-btn"
+                    target="_blank"
+                    data-i18n="service.button"
+                >
+                    ЗАПИСАТЬСЯ
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- КАПСУЛЯЦИЯ -->
+
+        <article class="service-card">
+
+            <img
+                src="./images/service-capsules.jpg"
+                alt="Hair capsule service"
+            >
+
+            <div class="service-overlay">
+
+                <h3 data-i18n="service4.title">
+                    Капсуляция вашего волоса
+                </h3>
+
+                <p data-i18n="service4.text">
+                    Подготовка и капсуляция ваших собственных волос
+                    для дальнейшего использования.
+                </p>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    class="service-btn"
+                    target="_blank"
+                    data-i18n="service.button"
+                >
+                    ЗАПИСАТЬСЯ
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- СНЯТИЕ -->
+
+        <article class="service-card">
+
+            <img
+                src="./images/service-removal.jpg"
+                alt="Hair extensions removal"
+            >
+
+            <div class="service-overlay">
+
+                <h3 data-i18n="service5.title">
+                    Снятие
+                </h3>
+
+                <p data-i18n="service5.text">
+                    Аккуратное снятие наращённых волос
+                    с бережным отношением к вашим собственным волосам.
+                </p>
+
+                <a
+                    href="https://wa.me/31614664933"
+                    class="service-btn"
+                    target="_blank"
+                    data-i18n="service.button"
+                >
+                    ЗАПИСАТЬСЯ
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- ================= EXTRA SERVICES ================= -->
+
+    <section class="extra-section">
+
+        <h2
+            class="extra-title"
+            data-i18n="extra.title"
+        >
+            ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+        </h2>
+
+
+        <div class="extra-grid">
+
+            <article class="extra-card">
+
+                <div>
+
+                    <h3 data-i18n="extra1.title">
+                        Консультация
+                    </h3>
+
+                    <p data-i18n="extra1.text">
+                        Индивидуальная консультация и подбор
+                        подходящей техники, длины и объёма.
+                    </p>
+
+                </div>
+
+                <div
+                    class="extra-price"
+                    data-i18n="extra1.price"
+                >
+                    По запросу
+                </div>
+
+            </article>
+
+
+            <article class="extra-card">
+
+                <div>
+
+                    <h3 data-i18n="extra2.title">
+                        Коррекция
+                    </h3>
+
+                    <p data-i18n="extra2.text">
+                        Обновление и коррекция наращённых волос
+                        для сохранения аккуратного результата.
+                    </p>
+
+                </div>
+
+                <div
+                    class="extra-price"
+                    data-i18n="extra2.price"
+                >
+                    По запросу
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2 data-i18n="cta.title">
+            ГОТОВЫ К НОВОМУ ОБРАЗУ?
+        </h2>
+
+        <p data-i18n="cta.text">
+            Напишите нам в WhatsApp и мы подберём подходящую услугу.
+        </p>
+
+        <a
+            href="https://wa.me/31614664933"
+            target="_blank"
+            data-i18n="cta.button"
+        >
+            НАПИСАТЬ В WHATSAPP
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 <span>LUNA HAIR</span>
+
+</footer>
+
+
+<script>
+
+/* ================= TRANSLATIONS ================= */
+
+const translations = {
+
+    ru: {
+
+        "nav.home":"Главная",
+        "nav.services":"Услуги",
+        "nav.prices":"Цены",
+        "nav.works":"Работы",
+        "nav.reviews":"Отзывы",
+        "nav.contact":"Контакты",
+        "nav.whatsapp":"WhatsApp",
+
+        "hero.title":"УСЛУГИ",
+
+        "hero.text":
+            "Профессиональное наращивание волос, коррекция, капсуляция и снятие с вниманием к качеству ваших волос.",
+
+        "services.title":
+            "НАШИ УСЛУГИ",
+
+        "service1.title":
+            "Наращивание волос",
+
+        "service1.text":
+            "Подбор длины, объёма и оттенка с учётом структуры и состояния ваших волос.",
+
+        "service2.title":
+            "Nano",
+
+        "service2.text":
+            "Техника с очень маленькими и аккуратными креплениями для максимально естественного результата.",
+
+        "service3.title":
+            "Micro",
+
+        "service3.text":
+            "Точная и деликатная техника крепления, подходящая для создания дополнительного объёма и длины.",
+
+        "service4.title":
+            "Капсуляция вашего волоса",
+
+        "service4.text":
+            "Подготовка и капсуляция ваших собственных волос для дальнейшего использования.",
+
+        "service5.title":
+            "Снятие",
+
+        "service5.text":
+            "Аккуратное снятие наращённых волос с бережным отношением к вашим собственным волосам.",
+
+        "service.button":
+            "ЗАПИСАТЬСЯ",
+
+        "extra.title":
+            "ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ",
+
+        "extra1.title":
+            "Консультация",
+
+        "extra1.text":
+            "Индивидуальная консультация и подбор подходящей техники, длины и объёма.",
+
+        "extra1.price":
+            "По запросу",
+
+        "extra2.title":
+            "Коррекция",
+
+        "extra2.text":
+            "Обновление и коррекция наращённых волос для сохранения аккуратного результата.",
+
+        "extra2.price":
+            "По запросу",
+
+        "cta.title":
+            "ГОТОВЫ К НОВОМУ ОБРАЗУ?",
+
+        "cta.text":
+            "Напишите нам в WhatsApp и мы подберём подходящую услугу.",
+
+        "cta.button":
+            "НАПИСАТЬ В WHATSAPP"
+
+    },
+
+
+    nl: {
+
+        "nav.home":"Home",
+        "nav.services":"Diensten",
+        "nav.prices":"Prijzen",
+        "nav.works":"Werk",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+        "nav.whatsapp":"WhatsApp",
+
+        "hero.title":
+            "DIENSTEN",
+
+        "hero.text":
+            "Professionele hairextensions, correctie, kapselen en verwijderen met aandacht voor de kwaliteit van uw eigen haar.",
+
+        "services.title":
+            "ONZE DIENSTEN",
+
+        "service1.title":
+            "Hairextensions",
+
+        "service1.text":
+            "Selectie van lengte, volume en kleur afgestemd op de structuur en conditie van uw haar.",
+
+        "service2.title":
+            "Nano",
+
+        "service2.text":
+            "Een techniek met zeer kleine en verfijnde bevestigingen voor een zo natuurlijk mogelijk resultaat.",
+
+        "service3.title":
+            "Micro",
+
+        "service3.text":
+            "Een nauwkeurige en zachte bevestigingstechniek voor extra volume en lengte.",
+
+        "service4.title":
+            "Uw eigen haar kapselen",
+
+        "service4.text":
+            "Uw eigen haar voorbereiden en voorzien van capsules voor verder gebruik.",
+
+        "service5.title":
+            "Verwijderen",
+
+        "service5.text":
+            "Zorgvuldig verwijderen van hairextensions met aandacht voor uw eigen haar.",
+
+        "service.button":
+            "AFSPRAAK MAKEN",
+
+        "extra.title":
+            "EXTRA DIENSTEN",
+
+        "extra1.title":
+            "Consultatie",
+
+        "extra1.text":
+            "Persoonlijk advies en keuze van de juiste techniek, lengte en volume.",
+
+        "extra1.price":
+            "Op aanvraag",
+
+        "extra2.title":
+            "Correctie",
+
+        "extra2.text":
+            "Bijwerken en corrigeren van hairextensions voor een verzorgd resultaat.",
+
+        "extra2.price":
+            "Op aanvraag",
+
+        "cta.title":
+            "KLAAR VOOR EEN NIEUWE LOOK?",
+
+        "cta.text":
+            "Stuur ons een bericht via WhatsApp en wij helpen u de juiste behandeling te kiezen.",
+
+        "cta.button":
+            "STUUR EEN WHATSAPP"
+
+    },
+
+
+    en: {
+
+        "nav.home":"Home",
+        "nav.services":"Services",
+        "nav.prices":"Prices",
+        "nav.works":"Works",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+        "nav.whatsapp":"WhatsApp",
+
+        "hero.title":
+            "SERVICES",
+
+        "hero.text":
+            "Professional hair extensions, correction, capsule preparation and removal with care for the quality of your natural hair.",
+
+        "services.title":
+            "OUR SERVICES",
+
+        "service1.title":
+            "Hair Extensions",
+
+        "service1.text":
+            "Selection of length, volume and shade according to the structure and condition of your hair.",
+
+        "service2.title":
+            "Nano",
+
+        "service2.text":
+            "A technique using very small and discreet attachments for the most natural-looking result.",
+
+        "service3.title":
+            "Micro",
+
+        "service3.text":
+            "A precise and gentle attachment technique for additional length and volume.",
+
+        "service4.title":
+            "Your Hair Capsule Preparation",
+
+        "service4.text":
+            "Preparation and capsule application of your own hair for further use.",
+
+        "service5.title":
+            "Removal",
+
+        "service5.text":
+            "Careful removal of hair extensions with attention to the health of your natural hair.",
+
+        "service.button":
+            "BOOK NOW",
+
+        "extra.title":
+            "EXTRA SERVICES",
+
+        "extra1.title":
+            "Consultation",
+
+        "extra1.text":
+            "Personal consultation and selection of the right technique, length and volume.",
+
+        "extra1.price":
+            "On request",
+
+        "extra2.title":
+            "Correction",
+
+        "extra2.text":
+            "Refreshing and correcting hair extensions to maintain a neat result.",
+
+        "extra2.price":
+            "On request",
+
+        "cta.title":
+            "READY FOR A NEW LOOK?",
+
+        "cta.text":
+            "Send us a WhatsApp message and we will help you choose the right service.",
+
+        "cta.button":
+            "MESSAGE ON WHATSAPP"
+
+    },
+
+
+    ua: {
+
+        "nav.home":"Головна",
+        "nav.services":"Послуги",
+        "nav.prices":"Ціни",
+        "nav.works":"Роботи",
+        "nav.reviews":"Відгуки",
+        "nav.contact":"Контакти",
+        "nav.whatsapp":"WhatsApp",
+
+        "hero.title":
+            "ПОСЛУГИ",
+
+        "hero.text":
+            "Професійне нарощування волосся, корекція, капсулювання та зняття з увагою до якості вашого волосся.",
+
+        "services.title":
+            "НАШІ ПОСЛУГИ",
+
+        "service1.title":
+            "Нарощування волосся",
+
+        "service1.text":
+            "Підбір довжини, об'єму та відтінку з урахуванням структури і стану вашого волосся.",
+
+        "service2.title":
+            "Nano",
+
+        "service2.text":
+            "Техніка з дуже маленькими та акуратними кріпленнями для максимально природного результату.",
+
+        "service3.title":
+            "Micro",
+
+        "service3.text":
+            "Точна та делікатна техніка кріплення для створення додаткового об'єму та довжини.",
+
+        "service4.title":
+            "Капсулювання вашого волосся",
+
+        "service4.text":
+            "Підготовка та капсулювання вашого власного волосся для подальшого використання.",
+
+        "service5.title":
+            "Зняття",
+
+        "service5.text":
+            "Акуратне зняття нарощеного волосся з дбайливим ставленням до вашого власного волосся.",
+
+        "service.button":
+            "ЗАПИСАТИСЯ",
+
+        "extra.title":
+            "ДОДАТКОВІ ПОСЛУГИ",
+
+        "extra1.title":
+            "Консультація",
+
+        "extra1.text":
+            "Індивідуальна консультація та підбір відповідної техніки, довжини та об'єму.",
+
+        "extra1.price":
+            "За запитом",
+
+        "extra2.title":
+            "Корекція",
+
+        "extra2.text":
+            "Оновлення та корекція нарощеного волосся для збереження акуратного результату.",
+
+        "extra2.price":
+            "За запитом",
+
+        "cta.title":
+            "ГОТОВІ ДО НОВОГО ОБРАЗУ?",
+
+        "cta.text":
+            "Напишіть нам у WhatsApp, і ми допоможемо підібрати відповідну послугу.",
+
+        "cta.button":
+            "НАПИСАТИ У WHATSAPP"
+
+    }
+
+};
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+    /*
+        Один общий язык для всего сайта.
+        Все страницы используют ключ:
+        lunaLanguage
+    */
+
+    if(
+        !translations[lang]
+    ){
+        lang = "nl";
+    }
+
+
+    const languageData =
+        translations[lang];
+
+
+    document.documentElement.lang =
+        lang;
+
+
+    /* Переводим весь текст */
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(function(element){
+
+            const key =
+                element.getAttribute("data-i18n");
+
+
+            if(
+                Object.prototype.hasOwnProperty.call(
+                    languageData,
+                    key
+                )
+            ){
+
+                element.textContent =
+                    languageData[key];
+
+            }
+
+        });
+
+
+    /* Подсветка выбранного языка */
+
+    document
+        .querySelectorAll(".lang-btn")
+        .forEach(function(button){
+
+            button.classList.remove("active");
+
+
+            if(
+                button.dataset.lang === lang
+            ){
+
+                button.classList.add("active");
+
+            }
+
+        });
+
+
+    /*
+        ВАЖНО:
+        сохраняем именно lunaLanguage,
+        который используется на всех страницах.
+    */
+
+    try{
+
+        localStorage.setItem(
+            "lunaLanguage",
+            lang
+        );
+
+    }catch(error){
+
+        console.log(
+            "Language storage unavailable"
+        );
+
+    }
+
+}
+
+
+/* ================= LOAD LANGUAGE ================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        let savedLanguage = "nl";
+
+
+        try{
+
+            const saved =
+                localStorage.getItem(
+                    "lunaLanguage"
+                );
+
+
+            if(
+                saved &&
+                Object.prototype.hasOwnProperty.call(
+                    translations,
+                    saved
+                )
+            ){
+
+                savedLanguage =
+                    saved;
+
+            }
+
+        }catch(error){
+
+            savedLanguage =
+                "nl";
+
+        }
+
+
+        setLanguage(
+            savedLanguage
+        );
+
+    }
+);
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("mainNav")
+        .classList.toggle("open");
+
+}
+
+
+/* ================= CLOSE MOBILE MENU ================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        document
+            .querySelectorAll("nav a")
+            .forEach(function(link){
+
+                link.addEventListener(
+                    "click",
+                    function(){
+
+                        document
+                            .getElementById("mainNav")
+                            .classList.remove("open");
+
+                    }
+                );
+
+            });
+
+    }
+);
+
+</script>
+
+</body>
+</html>

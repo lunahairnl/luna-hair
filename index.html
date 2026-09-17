@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUNA HAIR — Наращивание волос</title>
+
+    <style>
+        :root {
+            --cream: #EAE2D5;
+            --cream-light: #F8F5EF;
+            --brown: #241B17;
+            --brown-soft: #332722;
+            --gold: #BFA06A;
+            --gold-light: #D8C59A;
+            --text: #29211D;
+            --muted: #746960;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 78px;
+            background: rgba(36, 27, 23, 0.97);
+            border-bottom: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--gold-light);
+            font-size: 25px;
+            letter-spacing: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold-light);
+        }
+
+        .languages {
+            display: flex;
+            gap: 7px;
+            margin-left: 15px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(216, 197, 154, 0.5);
+            color: var(--white);
+            padding: 5px 8px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--brown);
+            border-color: var(--gold);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold-light);
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+            height: 620px;
+            overflow: hidden;
+            margin-top: 78px;
+            background: var(--brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 1s ease;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--brown);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            transform: scale(1);
+            transition: opacity 1s ease;
+            background: var(--brown);
+        }
+
+        .slide.active img {
+            transform: scale(1);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(36, 27, 23, 0.10),
+                    rgba(36, 27, 23, 0.40)
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 5;
+            left: 8%;
+            bottom: 70px;
+            max-width: 650px;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 58px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            margin-bottom: 18px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: #f3eee7;
+            margin-bottom: 28px;
+            max-width: 540px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--brown);
+            text-decoration: none;
+            padding: 14px 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--gold-light);
+        }
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            background: var(--brown);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid rgba(191, 160, 106, 0.35);
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 28px 20px;
+            border-right: 1px solid rgba(191, 160, 106, 0.25);
+        }
+
+        .benefit:last-child {
+            border-right: none;
+        }
+
+        .benefit h3 {
+            color: var(--gold-light);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .benefit p {
+            color: #d8d0c8;
+            font-size: 13px;
+        }
+
+        /* ================= MAIN ================= */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--brown);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 50px;
+            font-size: 16px;
+        }
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--cream-light);
+            padding: 40px 30px;
+            border: 1px solid rgba(191, 160, 106, 0.45);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .card-icon {
+            color: var(--gold);
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--brown);
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ================= WORKS ================= */
+
+        .works {
+            background: var(--cream-light);
+            padding: 80px 7%;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .work-item {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: var(--brown);
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .work-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .work-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(36, 27, 23, 0.72),
+                transparent 60%
+            );
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .work-overlay span {
+            color: var(--white);
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .works-button-wrap {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .works-button {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--brown);
+            text-decoration: none;
+            padding: 13px 28px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .works-button:hover {
+            background: var(--gold);
+            color: var(--brown);
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: var(--brown);
+            color: var(--white);
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd4cc;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--brown);
+            text-decoration: none;
+            padding: 15px 35px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #19120f;
+            color: #b9afa6;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 12px;
+        }
+
+        footer .footer-logo {
+            color: var(--gold);
+            font-size: 18px;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 999;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: var(--brown);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px 25px 25px;
+                gap: 0;
+                border-bottom: 1px solid var(--gold);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 13px 0;
+                border-bottom: 1px solid rgba(216,197,154,0.15);
+            }
+
+            .languages {
+                margin: 15px 0 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 44px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 21px;
+                letter-spacing: 3px;
+            }
+
+            nav {
+                top: 70px;
+            }
+
+            .hero {
+                margin-top: 70px;
+                height: 430px;
+            }
+
+            .slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center center;
+                transform: scale(1);
+            }
+
+            .slide.active img {
+                transform: scale(1);
+            }
+
+            .hero-content {
+                left: 25px;
+                right: 25px;
+                bottom: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+                letter-spacing: 3px;
+                margin-bottom: 12px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit {
+                border-right: none;
+                border-bottom: 1px solid rgba(191, 160, 106, 0.25);
+                padding: 22px 15px;
+            }
+
+            .benefit:last-child {
+                border-bottom: none;
+            }
+
+            .section,
+            .works {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .section-subtitle {
+                font-size: 14px;
+                margin-bottom: 35px;
+            }
+
+            .cards {
+                gap: 18px;
+            }
+
+            .card {
+                padding: 30px 22px;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-item {
+                height: 280px;
+            }
+
+            .cta {
+                padding: 65px 20px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .whatsapp {
+                width: 48px;
+                height: 48px;
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        LUNA HAIR
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+
+        <a href="index.html" data-i18n="nav.home">
+            Главная
+        </a>
+
+        <a href="services.html" data-i18n="nav.services">
+            Услуги
+        </a>
+
+        <a href="prices.html" data-i18n="nav.prices">
+            Цены
+        </a>
+
+        <a href="works.html" data-i18n="nav.works">
+            Работы
+        </a>
+
+        <a href="reviews.html" data-i18n="nav.reviews">
+            Отзывы
+        </a>
+
+        <a href="contact.html" data-i18n="nav.contact">
+            Контакты
+        </a>
+
+        <div class="languages">
+
+            <button
+                class="lang-btn"
+                data-lang="nl"
+                onclick="setLanguage('nl')"
+            >
+                NL
+            </button>
+
+            <button
+                class="lang-btn"
+                data-lang="en"
+                onclick="setLanguage('en')"
+            >
+                EN
+            </button>
+
+            <button
+                class="lang-btn"
+                data-lang="ru"
+                onclick="setLanguage('ru')"
+            >
+                RU
+            </button>
+
+            <button
+                class="lang-btn"
+                data-lang="ua"
+                onclick="setLanguage('ua')"
+            >
+                UA
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="slider">
+
+        <div class="slide active">
+
+            <img
+                src="./images/8.jpeg"
+                alt="Hair extensions"
+            >
+
+        </div>
+
+        <div class="slide">
+
+            <img
+                src="./images/5.jpeg"
+                alt="Nano hair extensions"
+            >
+
+        </div>
+
+        <div class="slide">
+
+            <img
+                src="./images/3.jpeg"
+                alt="Hair extension capsules"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <h1 data-i18n="hero.title">
+            LUNA HAIR
+        </h1>
+
+        <p data-i18n="hero.text">
+            Профессиональное наращивание волос
+            с естественным и красивым результатом.
+        </p>
+
+        <a
+            href="services.html"
+            class="hero-btn"
+            data-i18n="hero.button"
+        >
+            Наши услуги
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <h3 data-i18n="benefit.one.title">
+            Индивидуальный подбор
+        </h3>
+
+        <p data-i18n="benefit.one.text">
+            Подбираем длину, объём и технику под ваши волосы.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <h3 data-i18n="benefit.two.title">
+            Nano / Micro
+        </h3>
+
+        <p data-i18n="benefit.two.text">
+            Аккуратные и практически незаметные крепления.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <h3 data-i18n="benefit.three.title">
+            Длина и объём
+        </h3>
+
+        <p data-i18n="benefit.three.text">
+            Создаём желаемую длину и естественный объём.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<section class="section">
+
+    <h2
+        class="section-title"
+        data-i18n="main.title"
+    >
+        Почему LUNA HAIR
+    </h2>
+
+    <p
+        class="section-subtitle"
+        data-i18n="main.subtitle"
+    >
+        Красивые волосы начинаются с правильного
+        подбора техники, длины и объёма.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                ✦
+            </div>
+
+            <h3 data-i18n="card.one.title">
+                Наращивание
+            </h3>
+
+            <p data-i18n="card.one.text">
+                Работаем с современными техниками
+                наращивания волос, сохраняя естественный
+                внешний вид.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ✧
+            </div>
+
+            <h3 data-i18n="card.two.title">
+                Качество
+            </h3>
+
+            <p data-i18n="card.two.text">
+                Важное внимание уделяется аккуратности,
+                комфорту и гармоничному результату.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ◇
+            </div>
+
+            <h3 data-i18n="card.three.title">
+                Индивидуальный подход
+            </h3>
+
+            <p data-i18n="card.three.text">
+                Подбираем решение с учётом ваших волос,
+                желаемой длины и необходимого объёма.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WORKS ================= -->
+
+<section class="works">
+
+    <h2
+        class="section-title"
+        data-i18n="works.title"
+    >
+        Наши работы
+    </h2>
+
+    <p
+        class="section-subtitle"
+        data-i18n="works.subtitle"
+    >
+        Примеры волос и результата наращивания.
+    </p>
+
+
+    <div class="works-grid">
+
+        <div class="work-item">
+
+            <img
+                src="./images/8.jpeg"
+                alt="Hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <span data-i18n="works.item1">
+                    Наращивание волос
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="work-item">
+
+            <img
+                src="./images/5.jpeg"
+                alt="Nano hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <span data-i18n="works.item2">
+                    Nano
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="work-item">
+
+            <img
+                src="./images/3.jpeg"
+                alt="Hair extension"
+            >
+
+            <div class="work-overlay">
+
+                <span data-i18n="works.item3">
+                    Естественная длина
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="works-button-wrap">
+
+        <a
+            href="works.html"
+            class="works-button"
+            data-i18n="works.button"
+        >
+            Смотреть все работы
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2 data-i18n="cta.title">
+        Готовы к новой длине?
+    </h2>
+
+    <p data-i18n="cta.text">
+        Напишите нам в WhatsApp и мы обсудим
+        желаемую длину, объём и технику.
+    </p>
+
+    <a
+        href="https://wa.me/31614664933"
+        target="_blank"
+        class="cta-button"
+        data-i18n="cta.button"
+    >
+        Написать в WhatsApp
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        LUNA HAIR
+    </div>
+
+    <div data-i18n="footer">
+        Профессиональное наращивание волос
+    </div>
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+    href="https://wa.me/31614664933"
+    target="_blank"
+    class="whatsapp"
+    aria-label="WhatsApp"
+>
+    ☎
+</a>
+
+
+<script>
+
+    /* ================= MENU ================= */
+
+    function toggleMenu(){
+
+        document
+            .getElementById("mainNav")
+            .classList.toggle("active");
+
+    }
+
+
+    /* ================= SLIDER ================= */
+
+    const slides = document.querySelectorAll(".slide");
+
+    let currentSlide = 0;
+
+    setInterval(function(){
+
+        if(slides.length === 0){
+            return;
+        }
+
+        slides[currentSlide].classList.remove("active");
+
+        currentSlide++;
+
+        if(currentSlide >= slides.length){
+            currentSlide = 0;
+        }
+
+        slides[currentSlide].classList.add("active");
+
+    }, 4500);
+
+
+    /* ================= TRANSLATIONS ================= */
+
+    const translations = {
+
+        ru: {
+
+            "nav.home": "Главная",
+            "nav.services": "Услуги",
+            "nav.prices": "Цены",
+            "nav.works": "Работы",
+            "nav.reviews": "Отзывы",
+            "nav.contact": "Контакты",
+
+            "hero.title": "LUNA HAIR",
+
+            "hero.text":
+                "Профессиональное наращивание волос с естественным и красивым результатом.",
+
+            "hero.button":
+                "Наши услуги",
+
+            "benefit.one.title":
+                "Индивидуальный подбор",
+
+            "benefit.one.text":
+                "Подбираем длину, объём и технику под ваши волосы.",
+
+            "benefit.two.title":
+                "Nano / Micro",
+
+            "benefit.two.text":
+                "Аккуратные и практически незаметные крепления.",
+
+            "benefit.three.title":
+                "Длина и объём",
+
+            "benefit.three.text":
+                "Создаём желаемую длину и естественный объём.",
+
+            "main.title":
+                "Почему LUNA HAIR",
+
+            "main.subtitle":
+                "Красивые волосы начинаются с правильного подбора техники, длины и объёма.",
+
+            "card.one.title":
+                "Наращивание",
+
+            "card.one.text":
+                "Работаем с современными техниками наращивания волос, сохраняя естественный внешний вид.",
+
+            "card.two.title":
+                "Качество",
+
+            "card.two.text":
+                "Важное внимание уделяется аккуратности, комфорту и гармоничному результату.",
+
+            "card.three.title":
+                "Индивидуальный подход",
+
+            "card.three.text":
+                "Подбираем решение с учётом ваших волос, желаемой длины и необходимого объёма.",
+
+            "works.title":
+                "Наши работы",
+
+            "works.subtitle":
+                "Примеры волос и результата наращивания.",
+
+            "works.item1":
+                "Наращивание волос",
+
+            "works.item2":
+                "Nano",
+
+            "works.item3":
+                "Естественная длина",
+
+            "works.button":
+                "Смотреть все работы",
+
+            "cta.title":
+                "Готовы к новой длине?",
+
+            "cta.text":
+                "Напишите нам в WhatsApp и мы обсудим желаемую длину, объём и технику.",
+
+            "cta.button":
+                "Написать в WhatsApp",
+
+            "footer":
+                "Профессиональное наращивание волос"
+
+        },
+
+
+        nl: {
+
+            "nav.home": "Home",
+            "nav.services": "Diensten",
+            "nav.prices": "Prijzen",
+            "nav.works": "Werk",
+            "nav.reviews": "Reviews",
+            "nav.contact": "Contact",
+
+            "hero.title": "LUNA HAIR",
+
+            "hero.text":
+                "Professionele hairextensions met een natuurlijk en mooi resultaat.",
+
+            "hero.button":
+                "Onze diensten",
+
+            "benefit.one.title":
+                "Persoonlijk advies",
+
+            "benefit.one.text":
+                "We kiezen de juiste lengte, volume en techniek voor jouw haar.",
+
+            "benefit.two.title":
+                "Nano / Micro",
+
+            "benefit.two.text":
+                "Nette en vrijwel onzichtbare bevestigingen.",
+
+            "benefit.three.title":
+                "Lengte en volume",
+
+            "benefit.three.text":
+                "Creëer de gewenste lengte en natuurlijk volume.",
+
+            "main.title":
+                "Waarom LUNA HAIR",
+
+            "main.subtitle":
+                "Mooi haar begint met de juiste techniek, lengte en hoeveelheid volume.",
+
+            "card.one.title":
+                "Hairextensions",
+
+            "card.one.text":
+                "We werken met moderne extensiontechnieken met behoud van een natuurlijke uitstraling.",
+
+            "card.two.title":
+                "Kwaliteit",
+
+            "card.two.text":
+                "We besteden veel aandacht aan netheid, comfort en een harmonieus resultaat.",
+
+            "card.three.title":
+                "Persoonlijke aanpak",
+
+            "card.three.text":
+                "We kiezen een oplossing die past bij jouw haar, gewenste lengte en volume.",
+
+            "works.title":
+                "Ons werk",
+
+            "works.subtitle":
+                "Voorbeelden van haar en extensionresultaten.",
+
+            "works.item1":
+                "Hairextensions",
+
+            "works.item2":
+                "Nano",
+
+            "works.item3":
+                "Natuurlijke lengte",
+
+            "works.button":
+                "Bekijk al het werk",
+
+            "cta.title":
+                "Klaar voor een nieuwe lengte?",
+
+            "cta.text":
+                "Stuur ons een bericht via WhatsApp en we bespreken de gewenste lengte, volume en techniek.",
+
+            "cta.button":
+                "Schrijf via WhatsApp",
+
+            "footer":
+                "Professionele hairextensions"
+
+        },
+
+
+        en: {
+
+            "nav.home": "Home",
+            "nav.services": "Services",
+            "nav.prices": "Prices",
+            "nav.works": "Our Work",
+            "nav.reviews": "Reviews",
+            "nav.contact": "Contact",
+
+            "hero.title": "LUNA HAIR",
+
+            "hero.text":
+                "Professional hair extensions with a natural and beautiful result.",
+
+            "hero.button":
+                "Our services",
+
+            "benefit.one.title":
+                "Personal selection",
+
+            "benefit.one.text":
+                "We choose the right length, volume and technique for your hair.",
+
+            "benefit.two.title":
+                "Nano / Micro",
+
+            "benefit.two.text":
+                "Neat and almost invisible attachments.",
+
+            "benefit.three.title":
+                "Length & volume",
+
+            "benefit.three.text":
+                "Create the desired length and natural volume.",
+
+            "main.title":
+                "Why LUNA HAIR",
+
+            "main.subtitle":
+                "Beautiful hair starts with the right technique, length and volume.",
+
+            "card.one.title":
+                "Hair extensions",
+
+            "card.one.text":
+                "We work with modern extension techniques while maintaining a natural look.",
+
+            "card.two.title":
+                "Quality",
+
+            "card.two.text":
+                "We focus on neatness, comfort and a harmonious result.",
+
+            "card.three.title":
+                "Personal approach",
+
+            "card.three.text":
+                "We choose a solution based on your hair, desired length and volume.",
+
+            "works.title":
+                "Our Work",
+
+            "works.subtitle":
+                "Examples of hair and extension results.",
+
+            "works.item1":
+                "Hair extensions",
+
+            "works.item2":
+                "Nano",
+
+            "works.item3":
+                "Natural length",
+
+            "works.button":
+                "View all work",
+
+            "cta.title":
+                "Ready for a new length?",
+
+            "cta.text":
+                "Message us on WhatsApp and we can discuss your desired length, volume and technique.",
+
+            "cta.button":
+                "Message on WhatsApp",
+
+            "footer":
+                "Professional hair extensions"
+
+        },
+
+
+        ua: {
+
+            "nav.home": "Головна",
+            "nav.services": "Послуги",
+            "nav.prices": "Ціни",
+            "nav.works": "Роботи",
+            "nav.reviews": "Відгуки",
+            "nav.contact": "Контакти",
+
+            "hero.title": "LUNA HAIR",
+
+            "hero.text":
+                "Професійне нарощування волосся з природним та красивим результатом.",
+
+            "hero.button":
+                "Наші послуги",
+
+            "benefit.one.title":
+                "Індивідуальний підбір",
+
+            "benefit.one.text":
+                "Підбираємо довжину, об'єм і техніку саме для вашого волосся.",
+
+            "benefit.two.title":
+                "Nano / Micro",
+
+            "benefit.two.text":
+                "Акуратні та практично непомітні кріплення.",
+
+            "benefit.three.title":
+                "Довжина та об'єм",
+
+            "benefit.three.text":
+                "Створюємо бажану довжину та природний об'єм.",
+
+            "main.title":
+                "Чому LUNA HAIR",
+
+            "main.subtitle":
+                "Красиве волосся починається з правильного підбору техніки, довжини та об'єму.",
+
+            "card.one.title":
+                "Нарощування",
+
+            "card.one.text":
+                "Працюємо із сучасними техніками нарощування волосся, зберігаючи природний вигляд.",
+
+            "card.two.title":
+                "Якість",
+
+            "card.two.text":
+                "Велику увагу приділяємо акуратності, комфорту та гармонійному результату.",
+
+            "card.three.title":
+                "Індивідуальний підхід",
+
+            "card.three.text":
+                "Підбираємо рішення відповідно до вашого волосся, бажаної довжини та об'єму.",
+
+            "works.title":
+                "Наші роботи",
+
+            "works.subtitle":
+                "Приклади волосся та результатів нарощування.",
+
+            "works.item1":
+                "Нарощування волосся",
+
+            "works.item2":
+                "Nano",
+
+            "works.item3":
+                "Природна довжина",
+
+            "works.button":
+                "Дивитися всі роботи",
+
+            "cta.title":
+                "Готові до нової довжини?",
+
+            "cta.text":
+                "Напишіть нам у WhatsApp і ми обговоримо бажану довжину, об'єм та техніку.",
+
+            "cta.button":
+                "Написати у WhatsApp",
+
+            "footer":
+                "Професійне нарощування волосся"
+
+        }
+
+    };
+
+
+    /* ================= LANGUAGE ================= */
+
+    function setLanguage(lang){
+
+        if(!translations[lang]){
+            lang = "nl";
+        }
+
+        const languageData = translations[lang];
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(function(element){
+
+            const key = element.getAttribute("data-i18n");
+
+            if(
+                Object.prototype.hasOwnProperty.call(
+                    languageData,
+                    key
+                )
+            ){
+                element.textContent = languageData[key];
+            }
+
+        });
+
+        document.querySelectorAll(".lang-btn").forEach(function(button){
+
+            button.classList.remove("active");
+
+            if(button.dataset.lang === lang){
+                button.classList.add("active");
+            }
+
+        });
+
+        try{
+
+            localStorage.setItem(
+                "lunaLanguage",
+                lang
+            );
+
+        }catch(error){
+
+            console.log("Language storage unavailable");
+
+        }
+
+    }
+
+
+    /* ================= LOAD LANGUAGE ================= */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function(){
+
+            let savedLanguage = "nl";
+
+            try{
+
+                const saved =
+                    localStorage.getItem("lunaLanguage");
+
+                if(
+                    saved &&
+                    Object.prototype.hasOwnProperty.call(
+                        translations,
+                        saved
+                    )
+                ){
+                    savedLanguage = saved;
+                }
+
+            }catch(error){
+
+                savedLanguage = "nl";
+
+            }
+
+            setLanguage(savedLanguage);
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

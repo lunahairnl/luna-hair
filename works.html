@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUNA HAIR — Works</title>
+
+<style>
+:root{
+    --cream:#EAE2D5;
+    --light:#F8F5EF;
+    --brown:#241B17;
+    --brown-soft:#332722;
+    --gold:#BFA06A;
+    --gold-light:#D8C59A;
+    --text:#29211D;
+    --muted:#746960;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(36,27,23,.96);
+    border-bottom:1px solid var(--gold);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:var(--gold-light);
+    font-size:25px;
+    letter-spacing:4px;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold-light);
+}
+
+.languages{
+    display:flex;
+    gap:6px;
+    margin-left:10px;
+}
+
+.languages button{
+    background:transparent;
+    border:1px solid rgba(216,197,154,.45);
+    color:#fff;
+    padding:6px 8px;
+    cursor:pointer;
+    font-size:11px;
+    transition:.3s;
+}
+
+.languages button:hover,
+.languages button.active{
+    background:var(--gold);
+    color:var(--brown);
+    border-color:var(--gold);
+}
+
+.menu-toggle{
+    display:none;
+    color:var(--gold-light);
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    height:620px;
+    margin-top:70px;
+    position:relative;
+    background:
+        linear-gradient(rgba(36,27,23,.38),rgba(36,27,23,.58)),
+        url("./images/8.jpeg") center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:70px 25px;
+    color:#fff;
+}
+
+.hero-content span{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+.hero-content h1{
+    margin-top:15px;
+    font-size:58px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.hero-content p{
+    margin-top:18px;
+    max-width:600px;
+    font-size:17px;
+    line-height:1.7;
+    color:#eee;
+}
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 25px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.section-title h2{
+    margin-top:12px;
+    font-size:42px;
+    font-weight:400;
+    letter-spacing:2px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.work{
+    position:relative;
+    height:420px;
+    overflow:hidden;
+    background:var(--brown);
+    border:1px solid rgba(191,160,106,.35);
+}
+
+.work.featured{
+    grid-column:span 2;
+}
+
+.work img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .7s ease;
+}
+
+.work:hover img{
+    transform:scale(1.05);
+}
+
+.work-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:28px;
+    background:linear-gradient(
+        transparent 25%,
+        rgba(36,27,23,.25) 45%,
+        rgba(36,27,23,.92) 100%
+    );
+    color:#fff;
+}
+
+.tag{
+    color:var(--gold-light);
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+.work h3{
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:8px;
+}
+
+.work p{
+    font-size:14px;
+    line-height:1.6;
+    color:#eee;
+    max-width:550px;
+}
+
+.cta{
+    background:var(--brown);
+    color:#fff;
+    text-align:center;
+    padding:80px 25px;
+}
+
+.cta h2{
+    font-size:40px;
+    font-weight:400;
+    color:var(--gold-light);
+    margin-bottom:18px;
+}
+
+.cta p{
+    color:#ddd;
+    margin-bottom:28px;
+}
+
+.cta a{
+    display:inline-block;
+    padding:14px 30px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    text-decoration:none;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.cta a:hover{
+    background:var(--gold);
+    color:var(--brown);
+}
+
+footer{
+    background:#1b1411;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+    font-size:12px;
+}
+
+@media(max-width:850px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:69px;
+        left:0;
+        width:100%;
+        background:var(--brown);
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
+        border-top:1px solid rgba(191,160,106,.3);
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    .languages{
+        margin-left:0;
+    }
+
+    .hero{
+        height:500px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .work.featured{
+        grid-column:span 1;
+    }
+
+    .work{
+        height:430px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+}
+
+@media(max-width:500px){
+
+    .navbar{
+        padding:16px 18px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .hero{
+        height:470px;
+    }
+
+    .hero-content{
+        padding:45px 20px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .section{
+        padding:65px 18px;
+    }
+
+    .work{
+        height:380px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            LUNA HAIR
+        </a>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <nav id="nav">
+
+            <a href="index.html" data-i18n="nav.home">
+                Home
+            </a>
+
+            <a href="services.html" data-i18n="nav.services">
+                Diensten
+            </a>
+
+            <a href="prices.html" data-i18n="nav.prices">
+                Prijzen
+            </a>
+
+            <a href="works.html" data-i18n="nav.works">
+                Werk
+            </a>
+
+            <a href="reviews.html" data-i18n="nav.reviews">
+                Reviews
+            </a>
+
+            <a href="contact.html" data-i18n="nav.contact">
+                Contact
+            </a>
+
+            <!-- NL → EN → RU → UA -->
+
+            <div class="languages">
+
+                <button
+                    data-lang="nl"
+                    onclick="setLanguage('nl')"
+                >
+                    NL
+                </button>
+
+                <button
+                    data-lang="en"
+                    onclick="setLanguage('en')"
+                >
+                    EN
+                </button>
+
+                <button
+                    data-lang="ru"
+                    onclick="setLanguage('ru')"
+                >
+                    RU
+                </button>
+
+                <button
+                    data-lang="ua"
+                    onclick="setLanguage('ua')"
+                >
+                    UA
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span data-i18n="hero.small">
+            LUNA HAIR
+        </span>
+
+        <h1 data-i18n="hero.title">
+            Ons werk
+        </h1>
+
+        <p data-i18n="hero.text">
+            Voorbeelden van hairextensions, lengte, volume en verschillende technieken.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span data-i18n="gallery.small">
+            PORTFOLIO
+        </span>
+
+        <h2 data-i18n="gallery.title">
+            Ons werk
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="work featured">
+
+            <img
+                src="./images/1.jpeg"
+                alt="Hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work1.tag">
+                    HAIR EXTENSIONS
+                </div>
+
+                <h3 data-i18n="work1.title">
+                    Lengte & volume
+                </h3>
+
+                <p data-i18n="work1.text">
+                    Extensions voor extra lengte en volume.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/2.jpeg"
+                alt="Long hair"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work2.tag">
+                    LENGTH
+                </div>
+
+                <h3 data-i18n="work2.title">
+                    Lang haar
+                </h3>
+
+                <p data-i18n="work2.text">
+                    Een natuurlijke uitstraling en harmonieuze lengte.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/3.jpeg"
+                alt="Hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work3.tag">
+                    VOLUME
+                </div>
+
+                <h3 data-i18n="work3.title">
+                    Volume
+                </h3>
+
+                <p data-i18n="work3.text">
+                    Extra volume en dikte.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work featured">
+
+            <img
+                src="./images/4.jpeg"
+                alt="Hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work4.tag">
+                    CAPSULES
+                </div>
+
+                <h3 data-i18n="work4.title">
+                    Capsules
+                </h3>
+
+                <p data-i18n="work4.text">
+                    Nauwkeurig werken met bevestigingen en capsules.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/5.jpeg"
+                alt="Nano hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag">
+                    NANO
+                </div>
+
+                <h3>
+                    Nano
+                </h3>
+
+                <p data-i18n="work5.text">
+                    Kleine bevestigingen voor een verfijnde behandeling.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/6.jpeg"
+                alt="Micro hair extensions"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag">
+                    MICRO
+                </div>
+
+                <h3>
+                    Micro
+                </h3>
+
+                <p data-i18n="work6.text">
+                    Een techniek met kleine en subtiele bevestigingen.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/7.jpeg"
+                alt="Blonde long hair"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work7.tag">
+                    BLONDE
+                </div>
+
+                <h3 data-i18n="work7.title">
+                    Blond haar
+                </h3>
+
+                <p data-i18n="work7.text">
+                    Lengte en volume voor blond haar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work featured">
+
+            <img
+                src="./images/8.jpeg"
+                alt="Dark long hair"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work8.tag">
+                    DARK HAIR
+                </div>
+
+                <h3 data-i18n="work8.title">
+                    Donker haar
+                </h3>
+
+                <p data-i18n="work8.text">
+                    Extensions met behoud van een natuurlijke uitstraling.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/9.jpeg"
+                alt="Long hair from back"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work9.tag">
+                    RESULT
+                </div>
+
+                <h3 data-i18n="work9.title">
+                    Resultaat
+                </h3>
+
+                <p data-i18n="work9.text">
+                    Lengte, volume en natuurlijke beweging.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/10.jpeg"
+                alt="Hair result"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work10.tag">
+                    RESULT
+                </div>
+
+                <h3 data-i18n="work10.title">
+                    Na de behandeling
+                </h3>
+
+                <p data-i18n="work10.text">
+                    Het uiteindelijke resultaat van de behandeling.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/11.jpeg"
+                alt="Thick hair"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work11.tag">
+                    VOLUME
+                </div>
+
+                <h3 data-i18n="work11.title">
+                    Vol haar
+                </h3>
+
+                <p data-i18n="work11.text">
+                    Extra volume en dikte.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work featured">
+
+            <img
+                src="./images/12.jpeg"
+                alt="Hair capsules"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work12.tag">
+                    CAPSULES
+                </div>
+
+                <h3 data-i18n="work12.title">
+                    Bevestigingen
+                </h3>
+
+                <p data-i18n="work12.text">
+                    Nette bevestigingen met aandacht voor detail.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/13.jpeg"
+                alt="Long hair"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work13.tag">
+                    LENGTH
+                </div>
+
+                <h3 data-i18n="work13.title">
+                    Lengte
+                </h3>
+
+                <p data-i18n="work13.text">
+                    Mooie lengte en natuurlijke beweging.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <img
+                src="./images/14.jpeg"
+                alt="Hair extensions result"
+            >
+
+            <div class="work-overlay">
+
+                <div class="tag" data-i18n="work14.tag">
+                    LUNA HAIR
+                </div>
+
+                <h3 data-i18n="work14.title">
+                    Eindresultaat
+                </h3>
+
+                <p data-i18n="work14.text">
+                    Een complete look met lang en volumineus haar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <h2 data-i18n="cta.title">
+        Wil je dit resultaat?
+    </h2>
+
+    <p data-i18n="cta.text">
+        Neem contact met ons op voor een afspraak en consult.
+    </p>
+
+    <a
+        href="https://wa.me/31614664933"
+        target="_blank"
+        data-i18n="cta.button"
+    >
+        Schrijf via WhatsApp
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 LUNA HAIR
+</footer>
+
+
+<script>
+
+const translations = {
+
+    nl:{
+
+        "nav.home":"Home",
+        "nav.services":"Diensten",
+        "nav.prices":"Prijzen",
+        "nav.works":"Werk",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Ons werk",
+        "hero.text":"Voorbeelden van hairextensions, lengte, volume en verschillende technieken.",
+
+        "gallery.small":"PORTFOLIO",
+        "gallery.title":"Ons werk",
+
+        "work1.tag":"HAIR EXTENSIONS",
+        "work1.title":"Lengte & volume",
+        "work1.text":"Extensions voor extra lengte en volume.",
+
+        "work2.tag":"LENGTH",
+        "work2.title":"Lang haar",
+        "work2.text":"Een natuurlijke uitstraling en harmonieuze lengte.",
+
+        "work3.tag":"VOLUME",
+        "work3.title":"Volume",
+        "work3.text":"Extra volume en dikte.",
+
+        "work4.tag":"CAPSULES",
+        "work4.title":"Capsules",
+        "work4.text":"Nauwkeurig werken met bevestigingen en capsules.",
+
+        "work5.text":"Kleine bevestigingen voor een verfijnde behandeling.",
+        "work6.text":"Een techniek met kleine en subtiele bevestigingen.",
+
+        "work7.tag":"BLONDE",
+        "work7.title":"Blond haar",
+        "work7.text":"Lengte en volume voor blond haar.",
+
+        "work8.tag":"DARK HAIR",
+        "work8.title":"Donker haar",
+        "work8.text":"Extensions met behoud van een natuurlijke uitstraling.",
+
+        "work9.tag":"RESULT",
+        "work9.title":"Resultaat",
+        "work9.text":"Lengte, volume en natuurlijke beweging.",
+
+        "work10.tag":"RESULT",
+        "work10.title":"Na de behandeling",
+        "work10.text":"Het uiteindelijke resultaat van de behandeling.",
+
+        "work11.tag":"VOLUME",
+        "work11.title":"Vol haar",
+        "work11.text":"Extra volume en dikte.",
+
+        "work12.tag":"CAPSULES",
+        "work12.title":"Bevestigingen",
+        "work12.text":"Nette bevestigingen met aandacht voor detail.",
+
+        "work13.tag":"LENGTH",
+        "work13.title":"Lengte",
+        "work13.text":"Mooie lengte en natuurlijke beweging.",
+
+        "work14.tag":"LUNA HAIR",
+        "work14.title":"Eindresultaat",
+        "work14.text":"Een complete look met lang en volumineus haar.",
+
+        "cta.title":"Wil je dit resultaat?",
+        "cta.text":"Neem contact met ons op voor een afspraak en consult.",
+        "cta.button":"Schrijf via WhatsApp"
+    },
+
+
+    en:{
+
+        "nav.home":"Home",
+        "nav.services":"Services",
+        "nav.prices":"Prices",
+        "nav.works":"Our Work",
+        "nav.reviews":"Reviews",
+        "nav.contact":"Contact",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Our Work",
+        "hero.text":"Examples of hair extensions, length, volume and different techniques.",
+
+        "gallery.small":"PORTFOLIO",
+        "gallery.title":"Our Work",
+
+        "work1.tag":"HAIR EXTENSIONS",
+        "work1.title":"Length & Volume",
+        "work1.text":"Extensions for additional length and volume.",
+
+        "work2.tag":"LENGTH",
+        "work2.title":"Long Hair",
+        "work2.text":"A natural look and harmonious length.",
+
+        "work3.tag":"VOLUME",
+        "work3.title":"Volume",
+        "work3.text":"Additional volume and thickness.",
+
+        "work4.tag":"CAPSULES",
+        "work4.title":"Capsules",
+        "work4.text":"Precise work with attachments and capsules.",
+
+        "work5.text":"Small attachments for delicate work.",
+        "work6.text":"A technique using small and discreet attachments.",
+
+        "work7.tag":"BLONDE",
+        "work7.title":"Blonde Hair",
+        "work7.text":"Length and volume for blonde hair.",
+
+        "work8.tag":"DARK HAIR",
+        "work8.title":"Dark Hair",
+        "work8.text":"Extensions while maintaining a natural look.",
+
+        "work9.tag":"RESULT",
+        "work9.title":"Result",
+        "work9.text":"Length, thickness and natural movement.",
+
+        "work10.tag":"RESULT",
+        "work10.title":"After the Treatment",
+        "work10.text":"The final appearance after the treatment.",
+
+        "work11.tag":"VOLUME",
+        "work11.title":"Thick Hair",
+        "work11.text":"Additional thickness and volume.",
+
+        "work12.tag":"CAPSULES",
+        "work12.title":"Attachments",
+        "work12.text":"Neat attachments with attention to detail.",
+
+        "work13.tag":"LENGTH",
+        "work13.title":"Length",
+        "work13.text":"Beautiful length and natural movement.",
+
+        "work14.tag":"LUNA HAIR",
+        "work14.title":"Final Result",
+        "work14.text":"A finished look with long and voluminous hair.",
+
+        "cta.title":"Want this result?",
+        "cta.text":"Contact us for an appointment and consultation.",
+        "cta.button":"Write on WhatsApp"
+    },
+
+
+    ru:{
+
+        "nav.home":"Главная",
+        "nav.services":"Услуги",
+        "nav.prices":"Цены",
+        "nav.works":"Работы",
+        "nav.reviews":"Отзывы",
+        "nav.contact":"Контакты",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Наши работы",
+        "hero.text":"Примеры наращивания волос, длины, объёма и различных техник.",
+
+        "gallery.small":"PORTFOLIO",
+        "gallery.title":"Наши работы",
+
+        "work1.tag":"HAIR EXTENSIONS",
+        "work1.title":"Длина и объём",
+        "work1.text":"Наращивание для создания дополнительной длины и объёма волос.",
+
+        "work2.tag":"LENGTH",
+        "work2.title":"Длинные волосы",
+        "work2.text":"Естественный визуальный результат и гармоничная длина.",
+
+        "work3.tag":"VOLUME",
+        "work3.title":"Объём",
+        "work3.text":"Дополнительный объём и густота волос.",
+
+        "work4.tag":"CAPSULES",
+        "work4.title":"Капсулы",
+        "work4.text":"Аккуратная работа с креплениями и капсулами.",
+
+        "work5.text":"Миниатюрные крепления для деликатной работы.",
+        "work6.text":"Техника с небольшими и аккуратными креплениями.",
+
+        "work7.tag":"BLONDE",
+        "work7.title":"Светлые волосы",
+        "work7.text":"Длина и объём для светлых волос.",
+
+        "work8.tag":"DARK HAIR",
+        "work8.title":"Тёмные волосы",
+        "work8.text":"Наращивание с сохранением естественного образа.",
+
+        "work9.tag":"RESULT",
+        "work9.title":"Результат",
+        "work9.text":"Длина, густота и движение волос.",
+
+        "work10.tag":"RESULT",
+        "work10.title":"После процедуры",
+        "work10.text":"Финальный вид волос после работы.",
+
+        "work11.tag":"VOLUME",
+        "work11.title":"Густые волосы",
+        "work11.text":"Дополнительная густота и объём.",
+
+        "work12.tag":"CAPSULES",
+        "work12.title":"Крепления",
+        "work12.text":"Аккуратные крепления и внимание к деталям.",
+
+        "work13.tag":"LENGTH",
+        "work13.title":"Длина",
+        "work13.text":"Эффектная длина и естественное движение.",
+
+        "work14.tag":"LUNA HAIR",
+        "work14.title":"Финальный результат",
+        "work14.text":"Завершённый образ с длинными и объёмными волосами.",
+
+        "cta.title":"Хотите такой результат?",
+        "cta.text":"Свяжитесь с нами для записи и консультации.",
+        "cta.button":"Написать в WhatsApp"
+    },
+
+
+    ua:{
+
+        "nav.home":"Головна",
+        "nav.services":"Послуги",
+        "nav.prices":"Ціни",
+        "nav.works":"Роботи",
+        "nav.reviews":"Відгуки",
+        "nav.contact":"Контакти",
+
+        "hero.small":"LUNA HAIR",
+        "hero.title":"Наші роботи",
+        "hero.text":"Приклади нарощування волосся, довжини, об'єму та різних технік.",
+
+        "gallery.small":"PORTFOLIO",
+        "gallery.title":"Наші роботи",
+
+        "work1.tag":"HAIR EXTENSIONS",
+        "work1.title":"Довжина та об'єм",
+        "work1.text":"Нарощування для створення додаткової довжини та об'єму волосся.",
+
+        "work2.tag":"LENGTH",
+        "work2.title":"Довге волосся",
+        "work2.text":"Природний вигляд та гармонійна довжина.",
+
+        "work3.tag":"VOLUME",
+        "work3.title":"Об'єм",
+        "work3.text":"Додатковий об'єм та густота волосся.",
+
+        "work4.tag":"CAPSULES",
+        "work4.title":"Капсули",
+        "work4.text":"Акуратна робота з кріпленнями та капсулами.",
+
+        "work5.text":"Мініатюрні кріплення для делікатної роботи.",
+        "work6.text":"Техніка з невеликими та акуратними кріпленнями.",
+
+        "work7.tag":"BLONDE",
+        "work7.title":"Світле волосся",
+        "work7.text":"Довжина та об'єм для світлого волосся.",
+
+        "work8.tag":"DARK HAIR",
+        "work8.title":"Темне волосся",
+        "work8.text":"Нарощування зі збереженням природного вигляду.",
+
+        "work9.tag":"RESULT",
+        "work9.title":"Результат",
+        "work9.text":"Довжина, густота та природний рух волосся.",
+
+        "work10.tag":"RESULT",
+        "work10.title":"Після процедури",
+        "work10.text":"Фінальний вигляд волосся після роботи.",
+
+        "work11.tag":"VOLUME",
+        "work11.title":"Густе волосся",
+        "work11.text":"Додаткова густота та об'єм.",
+
+        "work12.tag":"CAPSULES",
+        "work12.title":"Кріплення",
+        "work12.text":"Акуратні кріплення та увага до деталей.",
+
+        "work13.tag":"LENGTH",
+        "work13.title":"Довжина",
+        "work13.text":"Ефектна довжина та природний рух волосся.",
+
+        "work14.tag":"LUNA HAIR",
+        "work14.title":"Фінальний результат",
+        "work14.text":"Завершений образ з довгим та об'ємним волоссям.",
+
+        "cta.title":"Хочете такий результат?",
+        "cta.text":"Зв'яжіться з нами для запису та консультації.",
+        "cta.button":"Написати у WhatsApp"
+    }
+
+};
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+function setLanguage(lang){
+
+    if(!translations[lang]){
+        lang = "nl";
+    }
+
+    const languageData = translations[lang];
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function(element){
+
+        const key = element.getAttribute("data-i18n");
+
+        if(
+            Object.prototype.hasOwnProperty.call(
+                languageData,
+                key
+            )
+        ){
+            element.textContent = languageData[key];
+        }
+
+    });
+
+
+    document.querySelectorAll(".languages button").forEach(function(button){
+
+        button.classList.remove("active");
+
+        if(button.dataset.lang === lang){
+            button.classList.add("active");
+        }
+
+    });
+
+
+    /* Общий язык для всего сайта */
+
+    try{
+        localStorage.setItem("lunaLanguage", lang);
+    }catch(error){
+        console.log("Language storage unavailable");
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    const nav = document.getElementById("nav");
+
+    if(nav){
+        nav.classList.toggle("open");
+    }
+
+}
+
+
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    let savedLanguage = "nl";
+
+    try{
+
+        const saved = localStorage.getItem("lunaLanguage");
+
+        if(
+            saved &&
+            Object.prototype.hasOwnProperty.call(
+                translations,
+                saved
+            )
+        ){
+            savedLanguage = saved;
+        }
+
+    }catch(error){
+
+        savedLanguage = "nl";
+
+    }
+
+
+    setLanguage(savedLanguage);
+
+
+    /* Закрываем мобильное меню после перехода */
+
+    document.querySelectorAll("#nav a").forEach(function(link){
+
+        link.addEventListener("click", function(){
+
+            const nav = document.getElementById("nav");
+
+            if(nav){
+                nav.classList.remove("open");
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
