@@ -59,11 +59,16 @@ main{max-width:1250px;margin:auto;padding:80px 30px}
 .lh-emblem span{position:relative;left:-2px}
 
 .services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:18px;border:1px solid rgba(191,160,106,.45);background:linear-gradient(135deg,rgba(36,27,23,.98),rgba(51,39,34,.96));position:relative}.services-grid::before{content:"";position:absolute;inset:7px;border:1px solid rgba(191,160,106,.18);pointer-events:none}
-.service-card{min-height:225px;background:rgba(36,27,23,.96);border:1px solid rgba(191,160,106,.28);padding:25px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;transition:.3s}
+.service-card{min-height:270px;background:rgba(36,27,23,.96);border:1px solid rgba(191,160,106,.28);padding:20px 16px 24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;transition:.3s}
 .service-card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(191,160,106,.12);pointer-events:none}
-.service-card::after{content:"";position:absolute;width:100px;height:100px;top:-55px;right:-55px;border-radius:50%;background:rgba(191,160,106,.07);transition:.3s}.service-card:hover{transform:translateY(-3px);border-color:rgba(191,160,106,.7)}.service-card:hover::after{transform:scale(1.35)}
-.service-photo-icon{width:122px;height:122px;border:1px solid var(--gold);border-radius:10px;object-fit:cover;object-position:center;display:block;margin-bottom:18px;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.2);transition:.35s}.service-card:hover .service-photo-icon{transform:scale(1.025)}
-.service-card h3{color:#fff;font-size:21px;font-weight:400;letter-spacing:1px;line-height:1.35;margin:0;position:relative}
+.service-card::after{content:"";position:absolute;width:100px;height:100px;top:-55px;right:-55px;border-radius:50%;background:rgba(191,160,106,.07);transition:.3s}
+.service-card:hover{transform:translateY(-3px);border-color:rgba(191,160,106,.7)}
+.service-card:hover::after{transform:scale(1.35)}
+.service-number{align-self:flex-start;color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:700;position:relative;z-index:1;margin:0 0 10px 2px}
+.service-photo-icon{width:122px;height:122px;border:1px solid var(--gold);border-radius:10px;object-fit:cover;object-position:center;display:block;margin-bottom:14px;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.2);transition:.35s}
+.service-card:hover .service-photo-icon{transform:scale(1.025)}
+.service-line{width:38px;height:1px;background:var(--gold);margin:0 0 14px;position:relative;z-index:1;opacity:.9}
+.service-card h3{color:#fff;font-size:17px;font-weight:400;letter-spacing:1px;line-height:1.35;margin:0;position:relative;z-index:1}
 
 .why-section{margin-top:85px;padding:42px 30px;background:rgba(248,245,239,.45);border-top:1px solid rgba(191,160,106,.3);border-bottom:1px solid rgba(191,160,106,.3)}
 .why-title{text-align:center;color:var(--brown);font-size:30px;font-weight:400;letter-spacing:2px;margin-bottom:32px}
@@ -107,9 +112,11 @@ footer span{color:var(--gold)}
     main{padding:60px 20px}
     .section-title{font-size:32px;margin-bottom:18px}
     .lh-emblem{position:static;transform:none;margin:24px auto 0;width:68px;height:68px;font-size:21px}
-     .services-grid{grid-template-columns:1fr;padding:12px}
-    .service-card{min-height:210px}
-    .service-photo-icon{width:120px;height:120px}
+    .services-grid{grid-template-columns:1fr;padding:12px}
+    .service-card{min-height:220px;padding:18px 18px 20px}
+    .service-number{align-self:flex-start;margin-bottom:8px}
+    .service-photo-icon{width:120px;height:120px;margin-bottom:12px}
+    .service-line{margin-bottom:12px}
     .why-section{margin-top:65px;padding:35px 20px}
     .why-title{font-size:25px}
     .why-grid{grid-template-columns:1fr;gap:8px}
@@ -164,27 +171,37 @@ footer span{color:var(--gold)}
 
 <div class="services-grid">
 <article class="service-card service-icon-card">
+<span class="service-number">01</span>
 <img class="service-photo-icon" src="./8.jpeg" alt="Hair extensions transformation">
+<span class="service-line"></span>
 <h3 data-i18n="service1.title">Service</h3>
 </article>
 
 <article class="service-card service-icon-card">
+<span class="service-number">02</span>
 <img class="service-photo-icon" src="./2.jpeg" alt="Nano hair extensions">
+<span class="service-line"></span>
 <h3 data-i18n="service2.title">Service</h3>
 </article>
 
 <article class="service-card service-icon-card">
+<span class="service-number">03</span>
 <img class="service-photo-icon" src="./11.jpeg" alt="Micro ring hair extensions">
+<span class="service-line"></span>
 <h3 data-i18n="service3.title">Service</h3>
 </article>
 
 <article class="service-card service-icon-card">
+<span class="service-number">04</span>
 <img class="service-photo-icon" src="https://media.hairtical.com/2026/03/fusion-keratin-extensions-69b3979f0455a.webp" alt="Keratin capsule hair extension">
+<span class="service-line"></span>
 <h3 data-i18n="service4.title">Service</h3>
 </article>
 
 <article class="service-card service-icon-card">
+<span class="service-number">05</span>
 <img class="service-photo-icon" src="https://cdn.shopify.com/s/files/1/0588/0027/5641/files/how-to-remove-hot-fusion-keratin-bond-hair-extensions-professional-remover_480x480.jpg?v=1725003400" alt="Professional hair extension removal">
+<span class="service-line"></span>
 <h3 data-i18n="service5.title">Service</h3>
 </article>
 </div>
@@ -255,7 +272,6 @@ ua:{
 "extra.title":"ДОДАТКОВІ ПОСЛУГИ","extra1.title":"Консультація","extra1.text":"Індивідуальна консультація та підбір відповідної техніки, довжини та об'єму.","extra1.price":"За запитом","extra2.title":"Корекція","extra2.text":"Оновлення та корекція нарощеного волосся для збереження акуратного результату.","extra2.price":"За запитом",
 "cta.title":"ГОТОВІ ДО НОВОГО ОБРАЗУ?","cta.text":"Напишіть нам у WhatsApp, і ми допоможемо підібрати відповідну послугу.","cta.button":"НАПИСАТИ У WHATSAPP"
 }};
-
 function setLanguage(lang){
 if(!translations[lang])lang="nl";
 const data=translations[lang];
@@ -264,24 +280,17 @@ document.querySelectorAll("[data-i18n]").forEach(function(el){
 const key=el.getAttribute("data-i18n");
 if(Object.prototype.hasOwnProperty.call(data,key))el.textContent=data[key];
 });
-document.querySelectorAll(".lang-btn").forEach(function(btn){
-btn.classList.toggle("active",btn.dataset.lang===lang);
-});
+document.querySelectorAll(".lang-btn").forEach(function(btn){btn.classList.toggle("active",btn.dataset.lang===lang)});
 try{localStorage.setItem("lunaLanguage",lang)}catch(error){}
 }
 document.addEventListener("DOMContentLoaded",function(){
 let savedLanguage="nl";
-try{
-const saved=localStorage.getItem("lunaLanguage");
-if(saved&&Object.prototype.hasOwnProperty.call(translations,saved))savedLanguage=saved;
-}catch(error){}
+try{const saved=localStorage.getItem("lunaLanguage");if(saved&&Object.prototype.hasOwnProperty.call(translations,saved))savedLanguage=saved}catch(error){}
 setLanguage(savedLanguage);
 });
 function toggleMenu(){document.getElementById("mainNav").classList.toggle("open")}
 document.addEventListener("DOMContentLoaded",function(){
-document.querySelectorAll("nav a").forEach(function(link){
-link.addEventListener("click",function(){document.getElementById("mainNav").classList.remove("open")});
-});
+document.querySelectorAll("nav a").forEach(function(link){link.addEventListener("click",function(){document.getElementById("mainNav").classList.remove("open")})});
 });
 </script>
 </body>
