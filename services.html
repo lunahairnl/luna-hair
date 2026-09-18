@@ -203,7 +203,12 @@ main{
 
 /* SERVICES */
 
-.services-heading{ text-align:center; margin-bottom:42px; }
+.services-heading{ text-align:center; margin-bottom:42px; position:relative; }
+.services-heading-inner{ display:flex; align-items:center; justify-content:center; gap:32px; }
+.lh-emblem{ width:82px; height:82px; border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-family:Georgia,serif; font-size:25px; letter-spacing:-5px; position:absolute; right:8%; top:50%; transform:translateY(-50%); background:var(--cream); }
+.lh-emblem::before{ content:""; position:absolute; inset:6px; border:1px solid rgba(191,160,106,.45); border-radius:50%; }
+.lh-emblem span{ position:relative; left:-2px; }
+@media(max-width:1100px){ .lh-emblem{ right:3%; } }
 .section-title{ margin-bottom:18px; }
 .heading-line{ width:70px; height:1px; background:var(--gold); margin:0 auto; position:relative; }
 .heading-line::after{ content:""; width:7px; height:7px; background:var(--cream); border:1px solid var(--gold); transform:rotate(45deg); position:absolute; left:50%; top:-4px; margin-left:-4px; }
@@ -407,6 +412,7 @@ footer span{
     .section-title{ font-size:32px; margin-bottom:18px; }
 
     .services-heading{ margin-bottom:32px; }
+    .lh-emblem{ position:static; transform:none; margin:24px auto 0; width:68px; height:68px; font-size:21px; }
 
     .services-grid{
         grid-template-columns:1fr;
