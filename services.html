@@ -53,16 +53,16 @@ nav a:hover{color:var(--light-gold)}
 main{max-width:1250px;margin:auto;padding:80px 30px}
 .section-title{text-align:center;font-size:42px;font-weight:400;letter-spacing:3px;margin-bottom:18px;color:var(--brown)}
 
-.services-heading-wrap{position:relative;text-align:center;margin-bottom:42px}
+.services-heading-wrap{position:relative;text-align:center;margin-bottom:30px}.services-heading-wrap::after{content:"";display:block;width:58px;height:1px;background:var(--gold);margin:18px auto 0}
 .lh-emblem{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:82px;height:82px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:Georgia,serif;font-size:25px;letter-spacing:-5px;background:var(--cream)}
 .lh-emblem::before{content:"";position:absolute;inset:6px;border:1px solid rgba(191,160,106,.45);border-radius:50%}
 .lh-emblem span{position:relative;left:-2px}
 
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service-card{min-height:245px;background:var(--brown);border:1px solid rgba(191,160,106,.35);padding:28px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;transition:.3s}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:18px;border:1px solid rgba(191,160,106,.45);background:linear-gradient(135deg,rgba(36,27,23,.98),rgba(51,39,34,.96));position:relative}.services-grid::before{content:"";position:absolute;inset:7px;border:1px solid rgba(191,160,106,.18);pointer-events:none}
+.service-card{min-height:245px;background:rgba(36,27,23,.96);border:1px solid rgba(191,160,106,.28);padding:25px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;transition:.3s}
 .service-card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(191,160,106,.12);pointer-events:none}
-.service-card:hover{transform:translateY(-4px);border-color:rgba(191,160,106,.75)}
-.service-photo-icon{width:130px;height:130px;border:1px solid var(--gold);border-radius:10px;object-fit:cover;object-position:center;display:block;margin-bottom:18px;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.service-card::after{content:"";position:absolute;width:100px;height:100px;top:-55px;right:-55px;border-radius:50%;background:rgba(191,160,106,.07);transition:.3s}.service-card:hover{transform:translateY(-3px);border-color:rgba(191,160,106,.7)}.service-card:hover::after{transform:scale(1.35)}
+.service-photo-icon{width:136px;height:136px;border:1px solid var(--gold);border-radius:10px;object-fit:cover;object-position:center;display:block;margin-bottom:18px;position:relative;box-shadow:0 8px 22px rgba(0,0,0,.2);transition:.35s}.service-card:hover .service-photo-icon{transform:scale(1.025)}
 .service-card h3{color:#fff;font-size:21px;font-weight:400;letter-spacing:1px;line-height:1.35;margin:0;position:relative}
 
 .why-section{margin-top:85px;padding:42px 30px;background:rgba(248,245,239,.45);border-top:1px solid rgba(191,160,106,.3);border-bottom:1px solid rgba(191,160,106,.3)}
@@ -107,7 +107,7 @@ footer span{color:var(--gold)}
     main{padding:60px 20px}
     .section-title{font-size:32px;margin-bottom:18px}
     .lh-emblem{position:static;transform:none;margin:24px auto 0;width:68px;height:68px;font-size:21px}
-    .services-grid{grid-template-columns:1fr}
+     .services-grid{grid-template-columns:1fr;padding:12px}
     .service-card{min-height:210px}
     .service-photo-icon{width:120px;height:120px}
     .why-section{margin-top:65px;padding:35px 20px}
