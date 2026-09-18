@@ -184,6 +184,159 @@ nav a:hover{
     gap:18px;
 }
 
+.method-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:80px;
+}
+.method-card{
+    position:relative;
+    overflow:hidden;
+    min-height:390px;
+    background:linear-gradient(145deg,rgba(36,27,23,.98),rgba(51,39,34,.96));
+    border:1px solid rgba(191,160,106,.45);
+    padding:10px;
+    transition:.35s;
+}
+.method-card::before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(191,160,106,.18);
+    pointer-events:none;
+    z-index:2;
+}
+.method-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+    box-shadow:0 18px 38px rgba(36,27,23,.24);
+}
+.method-image{
+    height:300px;
+    overflow:hidden;
+    position:relative;
+    background:#211815;
+}
+.method-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(36,27,23,.02),rgba(36,27,23,.18));
+    pointer-events:none;
+}
+.method-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+.method-card:hover .method-image img{transform:scale(1.035)}
+.capsule-image img{
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1.35);
+}
+.method-card:hover .capsule-image img{transform:scale(1.4)}
+.method-copy{
+    position:relative;
+    z-index:3;
+    padding:18px 16px 12px;
+    text-align:left;
+}
+.method-copy .tag{
+    display:block;
+    margin-bottom:7px;
+}
+.method-copy h3{
+    color:#fff;
+    font-size:25px;
+    font-weight:400;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+.method-copy p{
+    color:#ddd;
+    font-size:14px;
+    line-height:1.55;
+}
+.before-after-card{
+    grid-column:span 2;
+    min-height:430px;
+}
+.before-after-card .before-after-work{
+    height:100%;
+}
+.before-after-card .method-copy{
+    position:absolute;
+    left:18px;
+    bottom:12px;
+    max-width:520px;
+    text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.real-work-heading{
+    text-align:center;
+    margin:0 auto 35px;
+    max-width:720px;
+}
+.real-work-heading span{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:12px;
+}
+.real-work-heading h2{
+    margin-top:12px;
+    font-size:38px;
+    font-weight:400;
+    letter-spacing:2px;
+}
+.real-work-heading p{
+    margin-top:12px;
+    color:var(--muted);
+    line-height:1.6;
+}
+.real-gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    padding:14px;
+    border:1px solid rgba(191,160,106,.45);
+    background:linear-gradient(135deg,rgba(36,27,23,.98),rgba(51,39,34,.96));
+    position:relative;
+}
+.real-gallery::before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(191,160,106,.18);
+    pointer-events:none;
+}
+.real-photo{
+    height:250px;
+    overflow:hidden;
+    border:1px solid rgba(191,160,106,.28);
+    position:relative;
+    background:var(--brown);
+}
+.real-photo::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1px solid rgba(191,160,106,.12);
+    z-index:1;
+    pointer-events:none;
+}
+.real-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+.real-photo:hover img{transform:scale(1.04)}
+
+
 .work{
     position:relative;
     height:420px;
@@ -324,6 +477,13 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .method-grid{grid-template-columns:1fr;margin-bottom:60px}
+    .before-after-card{grid-column:span 1}
+    .method-image{height:280px}
+    .real-gallery{grid-template-columns:1fr 1fr}
+    .real-photo{height:220px}
+
+
     .work.featured{
         grid-column:span 1;
     }
@@ -366,6 +526,12 @@ footer{
     .work{
         height:380px;
     }
+
+    .method-image{height:250px}
+    .method-copy h3{font-size:22px}
+    .real-gallery{grid-template-columns:1fr}
+    .real-photo{height:330px}
+
 }
 </style>
 </head>
@@ -485,370 +651,84 @@ footer{
     </div>
 
 
-    <div class="gallery">
 
+    <div class="method-grid">
 
-        <div class="work featured">
-
-            <div class="before-after-work"><img src="./7.jpeg" alt="Voor"><img src="./8.jpeg" alt="Na"></div><div class="before-after-label"><span data-i18n="gallery.before">VOOR</span><span data-i18n="gallery.after">NA</span></div>
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work1.tag">
-                    HAIR EXTENSIONS
-                </div>
-
-                <h3 data-i18n="work1.title">
-                    Lengte & volume
-                </h3>
-
-                <p data-i18n="work1.text">
-                    Extensions voor extra lengte en volume.
-                </p>
-
+        <div class="method-card">
+            <div class="method-image"><img src="./9.jpeg" alt="Длинные волосы и объём"></div>
+            <div class="method-copy">
+                <span class="tag">LUNA HAIR</span>
+                <h3 data-i18n="work1.title">Длина & объём</h3>
+                <p data-i18n="work1.text">Дополнительная длина и выразительный объём.</p>
             </div>
-
         </div>
 
-
-        <div class="work">
-
-            <img
-                src="./2.jpeg"
-                alt="Long hair"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work2.tag">
-                    LENGTH
-                </div>
-
-                <h3 data-i18n="work2.title">
-                    Lang haar
-                </h3>
-
-                <p data-i18n="work2.text">
-                    Een natuurlijke uitstraling en harmonieuze lengte.
-                </p>
-
+        <div class="method-card">
+            <div class="method-image capsule-image">
+                <img src="https://remalisse.com/cdn/shop/files/remalisse-keratin-bonds-laid-out.png?v=1777641168&width=1600" alt="Капсулы для наращивания волос">
             </div>
-
+            <div class="method-copy">
+                <span class="tag">CAPSULES</span>
+                <h3 data-i18n="work4.title">Капсулы</h3>
+                <p data-i18n="work4.text">Крупный план капсул и аккуратных креплений.</p>
+            </div>
         </div>
 
-
-        <div class="work">
-
-            <img
-                src="./3.jpeg"
-                alt="Hair extensions"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work3.tag">
-                    VOLUME
-                </div>
-
-                <h3 data-i18n="work3.title">
-                    Volume
-                </h3>
-
-                <p data-i18n="work3.text">
-                    Extra volume en dikte.
-                </p>
-
+        <div class="method-card">
+            <div class="method-image"><img src="./2.jpeg" alt="Nano наращивание"></div>
+            <div class="method-copy">
+                <span class="tag">NANO</span>
+                <h3>Nano</h3>
+                <p data-i18n="work5.text">Миниатюрные крепления для деликатной работы.</p>
             </div>
-
         </div>
 
-
-        <div class="work featured">
-
-            <img
-                src="./4.jpeg"
-                alt="Hair extensions"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work4.tag">
-                    CAPSULES
-                </div>
-
-                <h3 data-i18n="work4.title">
-                    Capsules
-                </h3>
-
-                <p data-i18n="work4.text">
-                    Nauwkeurig werken met bevestigingen en capsules.
-                </p>
-
+        <div class="method-card">
+            <div class="method-image"><img src="./11.jpeg" alt="Micro наращивание"></div>
+            <div class="method-copy">
+                <span class="tag">MICRO</span>
+                <h3>Micro</h3>
+                <p data-i18n="work6.text">Небольшие и аккуратные крепления.</p>
             </div>
-
         </div>
 
-
-        <div class="work">
-
-            <img
-                src="./5.jpeg"
-                alt="Nano hair extensions"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag">
-                    NANO
-                </div>
-
-                <h3>
-                    Nano
-                </h3>
-
-                <p data-i18n="work5.text">
-                    Kleine bevestigingen voor een verfijnde behandeling.
-                </p>
-
+        <div class="method-card before-after-card">
+            <div class="before-after-work">
+                <img src="./7.jpeg" alt="До">
+                <img src="./8.jpeg" alt="После">
             </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./6.jpeg"
-                alt="Micro hair extensions"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag">
-                    MICRO
-                </div>
-
-                <h3>
-                    Micro
-                </h3>
-
-                <p data-i18n="work6.text">
-                    Een techniek met kleine en subtiele bevestigingen.
-                </p>
-
+            <div class="before-after-label">
+                <span data-i18n="gallery.before">ДО</span>
+                <span data-i18n="gallery.after">ПОСЛЕ</span>
             </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./7.jpeg"
-                alt="Blonde long hair"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work7.tag">
-                    BLONDE
-                </div>
-
-                <h3 data-i18n="work7.title">
-                    Blond haar
-                </h3>
-
-                <p data-i18n="work7.text">
-                    Lengte en volume voor blond haar.
-                </p>
-
+            <div class="method-copy method-copy-overlay">
+                <span class="tag">BEFORE / AFTER</span>
+                <h3 data-i18n="work9.title">Результат</h3>
+                <p data-i18n="work9.text">Длина, густота и естественное движение волос.</p>
             </div>
-
-        </div>
-
-
-        <div class="work featured">
-
-            <img
-                src="./8.jpeg"
-                alt="Dark long hair"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work8.tag">
-                    DARK HAIR
-                </div>
-
-                <h3 data-i18n="work8.title">
-                    Donker haar
-                </h3>
-
-                <p data-i18n="work8.text">
-                    Extensions met behoud van een natuurlijke uitstraling.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./9.jpeg"
-                alt="Long hair from back"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work9.tag">
-                    RESULT
-                </div>
-
-                <h3 data-i18n="work9.title">
-                    Resultaat
-                </h3>
-
-                <p data-i18n="work9.text">
-                    Lengte, volume en natuurlijke beweging.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./10.jpeg"
-                alt="Hair result"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work10.tag">
-                    RESULT
-                </div>
-
-                <h3 data-i18n="work10.title">
-                    Na de behandeling
-                </h3>
-
-                <p data-i18n="work10.text">
-                    Het uiteindelijke resultaat van de behandeling.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./11.jpeg"
-                alt="Thick hair"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work11.tag">
-                    VOLUME
-                </div>
-
-                <h3 data-i18n="work11.title">
-                    Vol haar
-                </h3>
-
-                <p data-i18n="work11.text">
-                    Extra volume en dikte.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work featured">
-
-            <img
-                src="./4.jpeg"
-                alt="Hair capsules"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work12.tag">
-                    CAPSULES
-                </div>
-
-                <h3 data-i18n="work12.title">
-                    Bevestigingen
-                </h3>
-
-                <p data-i18n="work12.text">
-                    Nette bevestigingen met aandacht voor detail.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./5.jpeg"
-                alt="Long hair"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work13.tag">
-                    LENGTH
-                </div>
-
-                <h3 data-i18n="work13.title">
-                    Lengte
-                </h3>
-
-                <p data-i18n="work13.text">
-                    Mooie lengte en natuurlijke beweging.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <img
-                src="./6.jpeg"
-                alt="Hair extensions result"
-            >
-
-            <div class="work-overlay">
-
-                <div class="tag" data-i18n="work14.tag">
-                    LUNA HAIR
-                </div>
-
-                <h3 data-i18n="work14.title">
-                    Eindresultaat
-                </h3>
-
-                <p data-i18n="work14.text">
-                    Een complete look met lang en volumineus haar.
-                </p>
-
-            </div>
-
         </div>
 
     </div>
+
+    <div class="real-work-heading">
+        <span data-i18n="real.small">LUNA HAIR</span>
+        <h2 data-i18n="real.title">Мои реальные работы</h2>
+        <p data-i18n="real.text">Твои фотографии остаются на сайте и показывают реальные результаты работы.</p>
+    </div>
+
+    <div class="real-gallery">
+        <div class="real-photo"><img src="./1.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./3.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./4.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./5.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./6.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./7.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./8.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./9.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./10.jpeg" alt="Работа LUNA HAIR"></div>
+        <div class="real-photo"><img src="./11.jpeg" alt="Работа LUNA HAIR"></div>
+    </div>
+
 
 </section>
 
@@ -971,6 +851,9 @@ const translations = {
 
         "gallery.small":"PORTFOLIO",
         "gallery.title":"Our Work",
+        "real.small":"LUNA HAIR",
+        "real.title":"My real work",
+        "real.text":"Your own photos stay on the website and show real results.",
 
         "work1.tag":"HAIR EXTENSIONS",
         "work1.title":"Length & Volume",
@@ -1044,6 +927,9 @@ const translations = {
 
         "gallery.small":"PORTFOLIO",
         "gallery.title":"Наши работы",
+        "real.small":"LUNA HAIR",
+        "real.title":"Мои реальные работы",
+        "real.text":"Твои фотографии остаются на сайте и показывают реальные результаты работы.",
 
         "work1.tag":"HAIR EXTENSIONS",
         "work1.title":"Длина и объём",
@@ -1117,6 +1003,9 @@ const translations = {
 
         "gallery.small":"PORTFOLIO",
         "gallery.title":"Наші роботи",
+        "real.small":"LUNA HAIR",
+        "real.title":"Мої реальні роботи",
+        "real.text":"Твої фотографії залишаються на сайті та показують реальні результати роботи.",
 
         "work1.tag":"HAIR EXTENSIONS",
         "work1.title":"Довжина та об'єм",
