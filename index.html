@@ -347,6 +347,24 @@
             overflow: hidden;
             position: relative;
             background: var(--brown);
+            border: 1px solid var(--gold);
+            padding: 7px;
+            transition: 0.35s;
+        }
+
+        .work-item::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid rgba(191, 160, 106, 0.22);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-light);
+            box-shadow: 0 16px 32px rgba(36, 27, 23, 0.25);
         }
 
         .work-item img {
