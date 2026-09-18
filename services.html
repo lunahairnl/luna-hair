@@ -205,76 +205,53 @@ main{
 
 .services-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .service-card{
-    position:relative;
-    min-height:320px;
-    overflow:hidden;
+    min-height:260px;
     background:var(--brown);
     border:1px solid rgba(191,160,106,.35);
-}
-
-.service-card:first-child{
-    grid-column:span 2;
-    min-height:360px;
-}
-
-.service-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:transform .6s ease;
-}
-
-.service-card:hover img{
-    transform:scale(1.04);
-}
-
-.service-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(36,27,23,.96) 0%,
-        rgba(36,27,23,.62) 45%,
-        rgba(36,27,23,.08) 100%
-    );
+    padding:30px 24px;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
-    padding:35px;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-.service-overlay h3{
+.service-icon{
+    color:var(--gold);
+    font-size:38px;
+    line-height:1;
+    margin-bottom:18px;
+}
+
+.service-card h3{
     color:#fff;
-    font-size:30px;
+    font-size:22px;
     font-weight:400;
-    letter-spacing:2px;
+    letter-spacing:1px;
     margin-bottom:12px;
 }
 
-.service-overlay p{
-    color:#eee;
-    line-height:1.6;
-    max-width:700px;
-    font-size:15px;
+.service-card p{
+    color:#ddd;
+    line-height:1.55;
+    font-size:14px;
+    max-width:340px;
 }
 
 .service-btn{
     display:inline-block;
-    width:max-content;
-    margin-top:20px;
-    padding:11px 20px;
+    margin-top:18px;
+    padding:9px 16px;
     border:1px solid var(--gold);
     color:var(--light-gold);
     text-decoration:none;
-    font-size:12px;
+    font-size:11px;
     letter-spacing:1px;
-    transition:.3s;
 }
 
 .service-btn:hover{
@@ -473,10 +450,8 @@ footer span{
         grid-template-columns:1fr;
     }
 
-    .service-card,
-    .service-card:first-child{
-        grid-column:auto;
-        min-height:300px;
+    .service-card{
+        min-height:230px;
     }
 
     .service-overlay{
@@ -681,172 +656,52 @@ footer span{
 
         <!-- НАРАЩИВАНИЕ -->
 
-        <article class="service-card">
-
-            <img
-                src="https://lunahair-extension.nl/10.jpeg"
-                alt="Hair extensions"
-            >
-
-            <div class="service-overlay">
-
-                <h3 data-i18n="service1.title">
-                    Наращивание волос
-                </h3>
-
-                <p data-i18n="service1.text">
-                    Подбор длины, объёма и оттенка с учётом
-                    структуры и состояния ваших волос.
-                </p>
-
-                <a
-                    href="https://wa.me/31614664933"
-                    class="service-btn"
-                    target="_blank"
-                    data-i18n="service.button"
-                >
-                    ЗАПИСАТЬСЯ
-                </a>
-
-            </div>
-
-        </article>
+        <article class="service-card service-icon-card">
+  <div class="service-icon">✦</div>
+  <h3 data-i18n="service1.title">Service</h3>
+  <p data-i18n="service1.text">Description</p>
+  <a href="https://wa.me/31614664933" class="service-btn" target="_blank" data-i18n="service.button">ЗАПИСАТЬСЯ</a>
+</article>
 
 
         <!-- NANO -->
 
-        <article class="service-card">
-
-            <img
-                src="https://lunahair-extension.nl/5.jpeg"
-                alt="Nano hair extensions"
-            >
-
-            <div class="service-overlay">
-
-                <h3 data-i18n="service2.title">
-                    Nano
-                </h3>
-
-                <p data-i18n="service2.text">
-                    Техника с очень маленькими и аккуратными
-                    креплениями для максимально естественного результата.
-                </p>
-
-                <a
-                    href="https://wa.me/31614664933"
-                    class="service-btn"
-                    target="_blank"
-                    data-i18n="service.button"
-                >
-                    ЗАПИСАТЬСЯ
-                </a>
-
-            </div>
-
-        </article>
+        <article class="service-card service-icon-card">
+  <div class="service-icon">◈</div>
+  <h3 data-i18n="service2.title">Service</h3>
+  <p data-i18n="service2.text">Description</p>
+  <a href="https://wa.me/31614664933" class="service-btn" target="_blank" data-i18n="service.button">ЗАПИСАТЬСЯ</a>
+</article>
 
 
         <!-- MICRO -->
 
-        <article class="service-card">
-
-            <img
-                src="https://lunahair-extension.nl/3.jpeg"
-                alt="Micro hair extensions"
-            >
-
-            <div class="service-overlay">
-
-                <h3 data-i18n="service3.title">
-                    Micro
-                </h3>
-
-                <p data-i18n="service3.text">
-                    Точная и деликатная техника крепления,
-                    подходящая для создания дополнительного объёма и длины.
-                </p>
-
-                <a
-                    href="https://wa.me/31614664933"
-                    class="service-btn"
-                    target="_blank"
-                    data-i18n="service.button"
-                >
-                    ЗАПИСАТЬСЯ
-                </a>
-
-            </div>
-
-        </article>
+        <article class="service-card service-icon-card">
+  <div class="service-icon">◇</div>
+  <h3 data-i18n="service3.title">Service</h3>
+  <p data-i18n="service3.text">Description</p>
+  <a href="https://wa.me/31614664933" class="service-btn" target="_blank" data-i18n="service.button">ЗАПИСАТЬСЯ</a>
+</article>
 
 
         <!-- КАПСУЛЯЦИЯ -->
 
-        <article class="service-card">
-
-            <img
-                src="https://lunahair-extension.nl/4.jpeg"
-                alt="Hair capsule service"
-            >
-
-            <div class="service-overlay">
-
-                <h3 data-i18n="service4.title">
-                    Капсуляция вашего волоса
-                </h3>
-
-                <p data-i18n="service4.text">
-                    Подготовка и капсуляция ваших собственных волос
-                    для дальнейшего использования.
-                </p>
-
-                <a
-                    href="https://wa.me/31614664933"
-                    class="service-btn"
-                    target="_blank"
-                    data-i18n="service.button"
-                >
-                    ЗАПИСАТЬСЯ
-                </a>
-
-            </div>
-
-        </article>
+        <article class="service-card service-icon-card">
+  <div class="service-icon">✧</div>
+  <h3 data-i18n="service4.title">Service</h3>
+  <p data-i18n="service4.text">Description</p>
+  <a href="https://wa.me/31614664933" class="service-btn" target="_blank" data-i18n="service.button">ЗАПИСАТЬСЯ</a>
+</article>
 
 
         <!-- СНЯТИЕ -->
 
-        <article class="service-card">
-
-            <img
-                src="https://lunahair-extension.nl/6.jpeg"
-                alt="Hair extensions removal"
-            >
-
-            <div class="service-overlay">
-
-                <h3 data-i18n="service5.title">
-                    Снятие
-                </h3>
-
-                <p data-i18n="service5.text">
-                    Аккуратное снятие наращённых волос
-                    с бережным отношением к вашим собственным волосам.
-                </p>
-
-                <a
-                    href="https://wa.me/31614664933"
-                    class="service-btn"
-                    target="_blank"
-                    data-i18n="service.button"
-                >
-                    ЗАПИСАТЬСЯ
-                </a>
-
-            </div>
-
-        </article>
+        <article class="service-card service-icon-card">
+  <div class="service-icon">↘</div>
+  <h3 data-i18n="service5.title">Service</h3>
+  <p data-i18n="service5.text">Description</p>
+  <a href="https://wa.me/31614664933" class="service-btn" target="_blank" data-i18n="service.button">ЗАПИСАТЬСЯ</a>
+</article>
 
     </div>
 
