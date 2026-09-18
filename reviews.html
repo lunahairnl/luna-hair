@@ -232,11 +232,23 @@ nav a:hover{
 .review-form{
     max-width:760px;
     margin:0 auto 80px;
-
-    background:var(--light);
+    position:relative;
+    background:linear-gradient(145deg,rgba(36,27,23,.98),rgba(51,39,34,.96));
     border:1px solid rgba(191,160,106,.55);
-
     padding:45px;
+    color:#fff;
+    transition:.35s;
+}
+.review-form::before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(191,160,106,.18);
+    pointer-events:none;
+}
+.review-form:hover{
+    border-color:var(--gold);
+    box-shadow:0 16px 32px rgba(36,27,23,.18);
 }
 
 .form-title{
@@ -244,7 +256,9 @@ nav a:hover{
     margin-bottom:35px;
 }
 
+.form-title{position:relative;z-index:1}
 .form-title h3{
+    color:#fff;
     font-size:30px;
     font-weight:300;
     letter-spacing:1px;
@@ -375,27 +389,46 @@ nav a:hover{
 }
 
 .review-card{
-    background:var(--light);
-
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,rgba(36,27,23,.98),rgba(51,39,34,.96));
     border:1px solid rgba(191,160,106,.45);
-
     padding:35px 30px;
-
     min-height:290px;
-
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-
+    color:#fff;
     transition:.35s;
+}
+.review-card::before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(191,160,106,.18);
+    pointer-events:none;
+}
+.review-card::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:-55px;
+    right:-55px;
+    border-radius:50%;
+    background:rgba(191,160,106,.07);
+    transition:.35s;
+    pointer-events:none;
 }
 
 .review-card:hover{
     transform:translateY(-5px);
     border-color:var(--gold);
-    box-shadow:0 18px 45px rgba(36,27,23,.12);
+    box-shadow:0 16px 32px rgba(36,27,23,.25);
 }
+.review-card:hover::after{transform:scale(1.35)}
 
+.review-stars,.review-text,.review-author{position:relative;z-index:1}
 .review-stars{
     display:flex;
     gap:4px;
@@ -411,7 +444,7 @@ nav a:hover{
     font-family:Georgia,serif;
     font-size:18px;
     line-height:1.7;
-    color:#443a34;
+    color:#eee6dc;
 }
 
 .review-author{
